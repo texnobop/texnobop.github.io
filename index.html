@@ -385,7 +385,7 @@ function selectCat(cat, el) {
         <div class="product-specs">${p.specs}</div>
         <div class="product-price ${isSoon ? 'soon' : ''}">${isSoon ? 'Tez kunda...' : price}</div>
         ${isSoon
-          ? `<div class="product-btn soon">Tez kunda...</div>`
+          ? `<a class="product-btn soon" href="https://${selectedMarket}.uz/uz/search?query=${encodeURIComponent(p.name)}" target="_blank">Qidiruv →</a>`
           : `<a class="product-btn" href="${link}" target="_blank">${marketNames[selectedMarket]} →</a>`
         }
       </div>`;
