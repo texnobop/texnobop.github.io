@@ -11,12 +11,12 @@ body{font-family:Arial,sans-serif;background:#0a0e1a;color:#e0e6f0;min-height:10
 .logo{font-size:28px;font-weight:bold;color:#4fc3f7;letter-spacing:2px}
 .logo span{color:#fff}
 .tagline{font-size:12px;color:#7a9bbf;margin-top:4px;letter-spacing:1px}
-.step-bar{display:flex;justify-content:center;gap:0;background:#0d1220;padding:16px;border-bottom:1px solid #1e3a5f;flex-wrap:wrap}
+.step-bar{display:flex;justify-content:center;background:#0d1220;padding:16px;border-bottom:1px solid #1e3a5f;flex-wrap:wrap;gap:4px}
 .step{display:flex;align-items:center;gap:8px;font-size:13px;color:#4a6080;padding:6px 16px}
 .step.active{color:#4fc3f7}
 .step-num{width:22px;height:22px;border-radius:50%;border:1px solid #2a4060;display:flex;align-items:center;justify-content:center;font-size:11px}
 .step.active .step-num{background:#4fc3f7;border-color:#4fc3f7;color:#0a0e1a}
-.step-arrow{color:#2a4060;font-size:16px}
+.step-arrow{color:#2a4060;font-size:16px;line-height:2.2}
 .section{max-width:960px;margin:0 auto;padding:28px 16px}
 .section-label{font-size:11px;letter-spacing:2px;color:#4a6080;margin-bottom:16px;text-transform:uppercase}
 .market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
@@ -35,13 +35,16 @@ body{font-family:Arial,sans-serif;background:#0a0e1a;color:#e0e6f0;min-height:10
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
 .product-card{background:#0d1220;border:1px solid #1e3a5f;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:all 0.2s}
 .product-card:hover{border-color:#4fc3f7;transform:translateY(-2px)}
+.product-card.coming-soon{border:1px dashed #2a4060;opacity:0.7}
 .product-badge{font-size:10px;padding:2px 8px;border-radius:20px;background:#0f2040;color:#4fc3f7;border:1px solid #1e4070;display:inline-block;margin-bottom:2px}
+.product-badge.soon{background:#1a1a0f;color:#f0a500;border-color:#3a3010}
 .product-name{font-size:13px;font-weight:bold;color:#c0d4e8;line-height:1.4}
 .product-specs{font-size:11px;color:#4a6080;line-height:1.6}
 .product-price{font-size:15px;font-weight:bold;color:#4fc3f7;margin-top:4px}
-.product-unavail{font-size:12px;color:#d84040;margin-top:4px}
+.product-price.soon{color:#f0a500;font-size:13px}
 .product-btn{display:block;text-align:center;background:#0f2a4a;color:#4fc3f7;border:1px solid #1e4a7a;padding:8px;border-radius:8px;text-decoration:none;font-size:12px;margin-top:auto;transition:all 0.2s}
 .product-btn:hover{background:#4fc3f7;color:#0a0e1a}
+.product-btn.soon{background:#1a1a0f;color:#f0a500;border-color:#3a3010;cursor:default}
 .divider{height:1px;background:#1e3a5f;margin:24px 0}
 .hidden{display:none}
 footer{background:#0d1220;border-top:1px solid #1e3a5f;text-align:center;padding:20px;font-size:12px;color:#4a6080;margin-top:40px}
@@ -117,7 +120,11 @@ const data = {
       name: "Samsung Galaxy A16",
       badge: "Android",
       specs: "6.7\" AMOLED · 50MP · 5000mAh · IP54 · 6 yil yangilanish",
-      price: "2,131,900 so'm",
+      prices: {
+        uzum: "2,039,000 so'm",
+        olcha: "2,131,900 so'm",
+        texnomart: "2,550,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/uz/product/smartfon-samsung-galaxy-1352827",
         olcha: "https://olcha.uz/ru/product/view/samsung-galaxy-a16",
@@ -128,7 +135,11 @@ const data = {
       name: "Samsung Galaxy A56 5G",
       badge: "5G",
       specs: "6.7\" AMOLED 120Hz · Exynos 1580 · 5000mAh · IP67",
-      price: "5,460,000 so'm",
+      prices: {
+        uzum: "6,500,000 so'm",
+        olcha: "10,100,000 so'm",
+        texnomart: "5,360,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/ru/product/smartfon-samsung-galaxy-1602716",
         olcha: "https://olcha.uz/ru/product/view/samsung-galaxy-a56-5g",
@@ -139,7 +150,11 @@ const data = {
       name: "iPhone 15",
       badge: "Premium",
       specs: "6.1\" Retina · A16 Bionic · 48MP · IP68 · USB-C",
-      price: "15,135,000 so'm",
+      prices: {
+        uzum: "15,135,000 so'm",
+        olcha: "15,135,000 so'm",
+        texnomart: "14,230,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",
         olcha: "https://olcha.uz/oz/product/view/apple-iphone-15",
@@ -150,7 +165,11 @@ const data = {
       name: "Redmi Note 14 Pro",
       badge: "200MP",
       specs: "6.67\" AMOLED · 200MP · 5500mAh · 120W zaryadlash",
-      price: "5,074,000 so'm",
+      prices: {
+        uzum: "3,997,120 so'm",
+        olcha: "4,360,000 so'm",
+        texnomart: "4,285,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/uz/product/smartfon-redmi-note-1466128",
         olcha: "https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",
@@ -161,7 +180,11 @@ const data = {
       name: "Xiaomi 15T",
       badge: "Leica",
       specs: "6.83\" AMOLED · Dimensity 8400 · 5500mAh · IP68",
-      price: "~9,000,000 so'm",
+      prices: {
+        uzum: "9,150,000 so'm",
+        olcha: "9,267,993 so'm",
+        texnomart: null
+      },
       links: {
         uzum: "https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",
         olcha: "https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",
@@ -174,7 +197,11 @@ const data = {
       name: "Lenovo IdeaPad Slim 3",
       badge: "O'qish uchun",
       specs: "15.6\" FHD · i5-13420H · 8GB · 512GB SSD",
-      price: "~5,500,000 so'm",
+      prices: {
+        uzum: "7,247,000 so'm",
+        olcha: "5,500,000 so'm",
+        texnomart: "3,990,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/ru/product/noutbuk-lenovo-ideapad-slim-3-16iru8-1102591",
         olcha: "https://olcha.uz/oz/product/view/noutbuk-lenovo-ideapad-slim-3-i5-13420h-8512-gb-156",
@@ -185,10 +212,14 @@ const data = {
       name: "Lenovo Legion 5",
       badge: "Gaming",
       specs: "16\" OLED 240Hz · i9-14900HX · RTX 5070 · 16GB",
-      price: "~18,000,000 so'm",
+      prices: {
+        uzum: null,
+        olcha: null,
+        texnomart: "18,647,000 so'm"
+      },
       links: {
-        uzum: "https://uzum.uz/uz/search?query=lenovo+legion+5",
-        olcha: "https://olcha.uz/oz/search?q=lenovo+legion+5",
+        uzum: null,
+        olcha: null,
         texnomart: "https://texnomart.uz/uz/katalog/noutbuki-lenovo/"
       }
     },
@@ -196,10 +227,14 @@ const data = {
       name: "ASUS ROG Strix G16",
       badge: "Gaming",
       specs: "16\" 165Hz · i7-13650HX · RTX 4050 · 16GB DDR5",
-      price: "~14,000,000 so'm",
+      prices: {
+        uzum: null,
+        olcha: null,
+        texnomart: "14,000,000 so'm"
+      },
       links: {
-        uzum: "https://uzum.uz/uz/search?query=asus+rog+strix+g16",
-        olcha: "https://olcha.uz/oz/search?q=asus+rog+strix+g16",
+        uzum: null,
+        olcha: null,
         texnomart: "https://texnomart.uz/uz/katalog/noutbuki-asus/"
       }
     },
@@ -207,10 +242,14 @@ const data = {
       name: "HP ProBook 450 G10",
       badge: "Biznes",
       specs: "15.6\" FHD · i5-1335U · 8GB · 512GB SSD · 11 soat",
-      price: "~8,000,000 so'm",
+      prices: {
+        uzum: null,
+        olcha: null,
+        texnomart: "6,890,000 so'm"
+      },
       links: {
-        uzum: "https://uzum.uz/uz/search?query=hp+probook+450+g10",
-        olcha: "https://olcha.uz/oz/search?q=hp+probook+450",
+        uzum: null,
+        olcha: null,
         texnomart: "https://texnomart.uz/uz/katalog/noutbuki-hp/"
       }
     },
@@ -218,11 +257,15 @@ const data = {
       name: "Apple MacBook Pro M2",
       badge: "Premium",
       specs: "13.3\" Retina · Apple M2 · 8GB · 256GB · 22 soat",
-      price: "~20,000,000 so'm",
+      prices: {
+        uzum: "20,832,000 so'm",
+        olcha: null,
+        texnomart: null
+      },
       links: {
         uzum: "https://uzum.uz/uz/search?query=macbook+pro+m2",
-        olcha: "https://olcha.uz/oz/search?q=macbook+pro+m2",
-        texnomart: "https://texnomart.uz/uz/katalog/apple-noutbuklari/"
+        olcha: null,
+        texnomart: null
       }
     }
   ],
@@ -231,29 +274,41 @@ const data = {
       name: "Apple Watch Series 10",
       badge: "Premium",
       specs: "LTPO OLED · ECG · SpO2 · Crash Detection · 18 soat",
-      price: "~5,000,000 so'm",
+      prices: {
+        uzum: "5,000,000 so'm",
+        olcha: null,
+        texnomart: null
+      },
       links: {
         uzum: "https://uzum.uz/ru/product/chasy-apple-watch-series-10-4246-1511581",
-        olcha: "https://olcha.uz/oz/manufacturer/apple/smart-watches",
-        texnomart: "https://texnomart.uz/uz/search/?q=apple+watch+series+10"
+        olcha: null,
+        texnomart: null
       }
     },
     {
       name: "Apple Watch SE",
       badge: "Arzon Apple",
       specs: "Retina OLED · Yurak urishi · SpO2 · GPS · 18 soat",
-      price: "~3,500,000 so'm",
+      prices: {
+        uzum: null,
+        olcha: null,
+        texnomart: null
+      },
       links: {
-        uzum: "https://uzum.uz/uz/search?query=apple+watch+se",
-        olcha: "https://olcha.uz/oz/manufacturer/apple/smart-watches",
-        texnomart: "https://texnomart.uz/uz/search/?q=apple+watch+se"
+        uzum: null,
+        olcha: null,
+        texnomart: null
       }
     },
     {
       name: "Samsung Galaxy Watch 7",
       badge: "Android",
       specs: "Super AMOLED · ECG · Qon shakari · GPS · 40 soat",
-      price: "~3,800,000 so'm",
+      prices: {
+        uzum: "3,399,000 so'm",
+        olcha: "3,399,000 so'm",
+        texnomart: "3,099,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/uz/search?query=samsung+galaxy+watch+7",
         olcha: "https://olcha.uz/oz/search?q=samsung+galaxy+watch+7",
@@ -264,7 +319,11 @@ const data = {
       name: "Xiaomi Smart Band 9",
       badge: "Eng arzon",
       specs: "1.62\" AMOLED · 150+ sport · Yurak urishi · 21 kun",
-      price: "~500,000 so'm",
+      prices: {
+        uzum: "450,000 so'm",
+        olcha: "450,000 so'm",
+        texnomart: "450,000 so'm"
+      },
       links: {
         uzum: "https://uzum.uz/uz/search?query=xiaomi+smart+band+9",
         olcha: "https://olcha.uz/oz/search?q=xiaomi+smart+band+9",
@@ -275,11 +334,15 @@ const data = {
       name: "Amazfit GTR Mini",
       badge: "Sport",
       specs: "AMOLED yumaloq · GPS · 120+ sport · 20 kun batareya",
-      price: "~1,200,000 so'm",
+      prices: {
+        uzum: null,
+        olcha: null,
+        texnomart: null
+      },
       links: {
-        uzum: "https://uzum.uz/uz/search?query=amazfit+gtr+mini",
-        olcha: "https://olcha.uz/oz/search?q=amazfit+gtr+mini",
-        texnomart: "https://texnomart.uz/uz/search/?q=amazfit+gtr+mini"
+        uzum: null,
+        olcha: null,
+        texnomart: null
       }
     }
   ]
@@ -312,17 +375,19 @@ function selectCat(cat, el) {
   const grid = document.getElementById('products-grid');
   grid.innerHTML = '';
   data[cat].forEach(p => {
+    const price = p.prices[selectedMarket];
     const link = p.links[selectedMarket];
-    const btnHtml = link
-      ? `<a class="product-btn" href="${link}" target="_blank">${marketNames[selectedMarket]} →</a>`
-      : `<div class="product-unavail">⚠ Bu marketda mavjud emas</div>`;
+    const isSoon = !price || !link;
     grid.innerHTML += `
-      <div class="product-card">
-        <span class="product-badge">${p.badge}</span>
+      <div class="product-card ${isSoon ? 'coming-soon' : ''}">
+        <span class="product-badge ${isSoon ? 'soon' : ''}">${isSoon ? '⏳ Tez kunda' : p.badge}</span>
         <div class="product-name">${p.name}</div>
         <div class="product-specs">${p.specs}</div>
-        <div class="product-price">${p.price}</div>
-        ${btnHtml}
+        <div class="product-price ${isSoon ? 'soon' : ''}">${isSoon ? 'Tez kunda...' : price}</div>
+        ${isSoon
+          ? `<div class="product-btn soon">Tez kunda...</div>`
+          : `<a class="product-btn" href="${link}" target="_blank">${marketNames[selectedMarket]} →</a>`
+        }
       </div>`;
   });
   document.getElementById('products-section').classList.remove('hidden');
