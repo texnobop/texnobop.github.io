@@ -13,11 +13,18 @@
         nav { background: #1557b0; padding: 10px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 15px; }
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .card h3 { color: #1a73e8; margin-bottom: 10px; }
-        .card p { font-size: 14px; line-height: 1.6; }
-        .card a { display: inline-block; margin-top: 15px; background: #1a73e8; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-size: 14px; }
+        .article { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .article h2 { color: #1a73e8; font-size: 24px; margin-bottom: 15px; }
+        .article p { font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table th { background: #1a73e8; color: white; padding: 10px; text-align: left; }
+        table td { padding: 10px; border-bottom: 1px solid #eee; }
+        table tr:nth-child(even) { background: #f9f9f9; }
+        .badge { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 4px 10px; border-radius: 20px; font-size: 13px; margin: 3px; }
+        .price { font-size: 22px; font-weight: bold; color: #e53935; margin: 15px 0; }
+        .btn { display: inline-block; background: #1a73e8; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-size: 15px; margin-top: 10px; }
+        .compare { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .compare h2 { color: #1a73e8; margin-bottom: 20px; }
         footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
@@ -36,24 +43,67 @@
 </nav>
 
 <div class="container">
-    <h2 style="margin: 20px 0;">So'nggi maqolalar</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Samsung Galaxy A55</h3>
-            <p>2024 yilning eng ko'p sotilgan telefonlaridan biri. Narxi va xususiyatlari haqida to'liq ma'lumot.</p>
-            <a href="#">Batafsil o'qish</a>
-        </div>
-        <div class="card">
-            <h3>iPhone 15 O'zbekistonda</h3>
-            <p>iPhone 15 ning O'zbekistondagi narxi va qayerdan sotib olish mumkinligi haqida.</p>
-            <a href="#">Batafsil o'qish</a>
-        </div>
-        <div class="card">
-            <h3>Arzon lekin sifatli telefonlar</h3>
-            <p>500,000 so'mgacha bo'lgan eng yaxshi telefonlar ro'yxati 2024.</p>
-            <a href="#">Batafsil o'qish</a>
-        </div>
+
+    <!-- Samsung A55 -->
+    <div class="article">
+        <h2>📱 Samsung Galaxy A55 — To'liq Sharh</h2>
+        <p>Samsung Galaxy A55 — 2024 yilning O'zbekistonda eng mashhur o'rta narxli telefonlaridan biri. Sifatli kamera, katta batareya va chiroyli dizayn bilan ajralib turadi.</p>
+        
+        <table>
+            <tr><th>Xususiyat</th><th>Ma'lumot</th></tr>
+            <tr><td>📺 Ekran</td><td>6.6 dyuym, Super AMOLED, 120Hz</td></tr>
+            <tr><td>⚡ Protsessor</td><td>Exynos 1480 (4nm)</td></tr>
+            <tr><td>🔋 Batareya</td><td>5000 mAh</td></tr>
+            <tr><td>📷 Kamera</td><td>50MP + 12MP + 5MP</td></tr>
+            <tr><td>💧 Himoya</td><td>IP67 (suv va changdan himoya)</td></tr>
+            <tr><td>🔄 Yangilanish</td><td>4 yil Android yangilanishi</td></tr>
+        </table>
+
+        <p>📌 <strong>Kimga mos:</strong></p>
+        <span class="badge">✅ Sifatli kamera xohlaydiganlarga</span>
+        <span class="badge">✅ Uzoq ishlaydiganni xohlaydiganlarga</span>
+        <span class="badge">✅ O'rta byudjetdagilarga</span>
+
+        <div class="price">💰 4,357,000 so'mdan boshlab</div>
+        <a href="https://uzum.uz" class="btn">Uzumdan sotib olish →</a>
     </div>
+
+    <!-- iPhone 15 -->
+    <div class="article">
+        <h2>🍎 iPhone 15 — To'liq Sharh</h2>
+        <p>iPhone 15 — Apple kompaniyasining 2023 yilgi flagman telefoni. Premium sifat, kuchli protsessor va uzoq xizmat muddati bilan mashhur.</p>
+
+        <table>
+            <tr><th>Xususiyat</th><th>Ma'lumot</th></tr>
+            <tr><td>📺 Ekran</td><td>6.1 dyuym, Super Retina XDR</td></tr>
+            <tr><td>⚡ Protsessor</td><td>Apple A16 Bionic</td></tr>
+            <tr><td>🔋 Batareya</td><td>3349 mAh</td></tr>
+            <tr><td>📷 Kamera</td><td>48MP asosiy</td></tr>
+            <tr><td>💧 Himoya</td><td>IP68 (6 metr chuqurlikda 30 daqiqa)</td></tr>
+            <tr><td>🔌 Zaryadlash</td><td>USB Type-C, MagSafe 15W</td></tr>
+        </table>
+
+        <p>📌 <strong>Kimga mos:</strong></p>
+        <span class="badge">✅ Premium sifat xohlaydiganlarga</span>
+        <span class="badge">✅ Apple ekotizimida bo'lganlarga</span>
+        <span class="badge">✅ Uzoq muddatga telefon olmoqchilarga</span>
+
+        <div class="price">💰 15,135,000 so'mdan boshlab</div>
+        <a href="https://uzum.uz" class="btn">Uzumdan sotib olish →</a>
+    </div>
+
+    <!-- Taqqoslash -->
+    <div class="compare">
+        <h2>⚖️ Samsung A55 vs iPhone 15 — Taqqoslash</h2>
+        <table>
+            <tr><th></th><th>Samsung A55</th><th>iPhone 15</th></tr>
+            <tr><td>💰 Narx</td><td>4,357,000 so'm</td><td>15,135,000 so'm</td></tr>
+            <tr><td>🔋 Batareya</td><td>Yaxshiroq</td><td>O'rtacha</td></tr>
+            <tr><td>📷 Kamera</td><td>Yaxshi</td><td>A'lo</td></tr>
+            <tr><td>💎 Sifat</td><td>Yaxshi</td><td>Premium</td></tr>
+        </table>
+    </div>
+
 </div>
 
 <footer>
