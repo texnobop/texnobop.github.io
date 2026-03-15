@@ -4,9 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texnobop - Telefon va Gadjetlar</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
+        header { background: #1a73e8; color: white; padding: 20px; text-align: center; }
+        header h1 { font-size: 28px; }
+        header p { font-size: 14px; margin-top: 5px; }
+        nav { background: #1557b0; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 15px; }
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card h3 { color: #1a73e8; margin-bottom: 10px; }
+        .card p { font-size: 14px; line-height: 1.6; }
+        .card a { display: inline-block; margin-top: 15px; background: #1a73e8; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-size: 14px; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
 </head>
 <body>
-    <h1>Texnobop ga xush kelibsiz!</h1>
-    <p>Telefon va gadjetlar haqida eng yaxshi ma'lumotlar.</p>
+
+<header>
+    <h1>📱 Texnobop</h1>
+    <p>O'zbekistonda eng yaxshi telefon va gadjetlar haqida</p>
+</header>
+
+<nav>
+    <a href="#">Bosh sahifa</a>
+    <a href="#">Telefonlar</a>
+    <a href="#">Gadjetlar</a>
+    <a href="#">Taqqoslash</a>
+</nav>
+
+<div class="container">
+    <h2 style="margin: 20px 0;">So'nggi maqolalar</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Samsung Galaxy A55</h3>
+            <p>2024 yilning eng ko'p sotilgan telefonlaridan biri. Narxi va xususiyatlari haqida to'liq ma'lumot.</p>
+            <a href="#">Batafsil o'qish</a>
+        </div>
+        <div class="card">
+            <h3>iPhone 15 O'zbekistonda</h3>
+            <p>iPhone 15 ning O'zbekistondagi narxi va qayerdan sotib olish mumkinligi haqida.</p>
+            <a href="#">Batafsil o'qish</a>
+        </div>
+        <div class="card">
+            <h3>Arzon lekin sifatli telefonlar</h3>
+            <p>500,000 so'mgacha bo'lgan eng yaxshi telefonlar ro'yxati 2024.</p>
+            <a href="#">Batafsil o'qish</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Texnobop - Barcha huquqlar himoyalangan</p>
+</footer>
+
 </body>
 </html>
