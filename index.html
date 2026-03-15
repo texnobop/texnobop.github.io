@@ -1,114 +1,332 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texnobop - Telefon va Gadjetlar</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
-        header { background: #1a73e8; color: white; padding: 20px; text-align: center; }
-        header h1 { font-size: 28px; }
-        header p { font-size: 14px; margin-top: 5px; }
-        nav { background: #1557b0; padding: 10px; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 15px; }
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .article { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 30px; }
-        .article h2 { color: #1a73e8; font-size: 24px; margin-bottom: 15px; }
-        .article p { font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        table th { background: #1a73e8; color: white; padding: 10px; text-align: left; }
-        table td { padding: 10px; border-bottom: 1px solid #eee; }
-        table tr:nth-child(even) { background: #f9f9f9; }
-        .badge { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 4px 10px; border-radius: 20px; font-size: 13px; margin: 3px; }
-        .price { font-size: 22px; font-weight: bold; color: #e53935; margin: 15px 0; }
-        .btn { display: inline-block; background: #1a73e8; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-size: 15px; margin-top: 10px; }
-        .compare { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 30px; }
-        .compare h2 { color: #1a73e8; margin-bottom: 20px; }
-        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texnobop - O'zbekistonda eng yaxshi texnologiyalar</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#0a0e1a;color:#e0e6f0;min-height:100vh}
+.header{background:#0d1220;border-bottom:1px solid #1e3a5f;padding:20px;text-align:center}
+.logo{font-size:28px;font-weight:bold;color:#4fc3f7;letter-spacing:2px}
+.logo span{color:#fff}
+.tagline{font-size:12px;color:#7a9bbf;margin-top:4px;letter-spacing:1px}
+.step-bar{display:flex;justify-content:center;gap:0;background:#0d1220;padding:16px;border-bottom:1px solid #1e3a5f;flex-wrap:wrap}
+.step{display:flex;align-items:center;gap:8px;font-size:13px;color:#4a6080;padding:6px 16px}
+.step.active{color:#4fc3f7}
+.step-num{width:22px;height:22px;border-radius:50%;border:1px solid #2a4060;display:flex;align-items:center;justify-content:center;font-size:11px}
+.step.active .step-num{background:#4fc3f7;border-color:#4fc3f7;color:#0a0e1a}
+.step-arrow{color:#2a4060;font-size:16px}
+.section{max-width:960px;margin:0 auto;padding:28px 16px}
+.section-label{font-size:11px;letter-spacing:2px;color:#4a6080;margin-bottom:16px;text-transform:uppercase}
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.market-btn{background:#0d1220;border:1px solid #1e3a5f;border-radius:12px;padding:20px 12px;text-align:center;cursor:pointer;transition:all 0.2s}
+.market-btn:hover{border-color:#4fc3f7;background:#0f1830}
+.market-btn.active{border-color:#4fc3f7;background:#0f1e35}
+.market-icon{font-size:28px;margin-bottom:8px}
+.market-name{font-size:14px;font-weight:bold;color:#c0d4e8}
+.market-desc{font-size:11px;color:#4a6080;margin-top:4px}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.cat-btn{background:#0d1220;border:1px solid #1e3a5f;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all 0.2s}
+.cat-btn:hover{border-color:#4fc3f7}
+.cat-btn.active{border-color:#4fc3f7;background:#0f1e35}
+.cat-icon{font-size:24px;margin-bottom:6px}
+.cat-name{font-size:13px;font-weight:bold;color:#c0d4e8}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.product-card{background:#0d1220;border:1px solid #1e3a5f;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:all 0.2s}
+.product-card:hover{border-color:#4fc3f7;transform:translateY(-2px)}
+.product-badge{font-size:10px;padding:2px 8px;border-radius:20px;background:#0f2040;color:#4fc3f7;border:1px solid #1e4070;display:inline-block;margin-bottom:2px}
+.product-name{font-size:13px;font-weight:bold;color:#c0d4e8;line-height:1.4}
+.product-specs{font-size:11px;color:#4a6080;line-height:1.6}
+.product-price{font-size:15px;font-weight:bold;color:#4fc3f7;margin-top:4px}
+.product-unavail{font-size:12px;color:#d84040;margin-top:4px}
+.product-btn{display:block;text-align:center;background:#0f2a4a;color:#4fc3f7;border:1px solid #1e4a7a;padding:8px;border-radius:8px;text-decoration:none;font-size:12px;margin-top:auto;transition:all 0.2s}
+.product-btn:hover{background:#4fc3f7;color:#0a0e1a}
+.divider{height:1px;background:#1e3a5f;margin:24px 0}
+.hidden{display:none}
+footer{background:#0d1220;border-top:1px solid #1e3a5f;text-align:center;padding:20px;font-size:12px;color:#4a6080;margin-top:40px}
+</style>
 </head>
 <body>
 
-<header>
-    <h1>📱 Texnobop</h1>
-    <p>O'zbekistonda eng yaxshi telefon va gadjetlar haqida</p>
-</header>
-
-<nav>
-    <a href="#">Bosh sahifa</a>
-    <a href="#">Telefonlar</a>
-    <a href="#">Gadjetlar</a>
-    <a href="#">Taqqoslash</a>
-</nav>
-
-<div class="container">
-
-    <!-- Samsung A55 -->
-    <div class="article">
-        <h2>📱 Samsung Galaxy A55 — To'liq Sharh</h2>
-        <p>Samsung Galaxy A55 — 2024 yilning O'zbekistonda eng mashhur o'rta narxli telefonlaridan biri. Sifatli kamera, katta batareya va chiroyli dizayn bilan ajralib turadi.</p>
-        
-        <table>
-            <tr><th>Xususiyat</th><th>Ma'lumot</th></tr>
-            <tr><td>📺 Ekran</td><td>6.6 dyuym, Super AMOLED, 120Hz</td></tr>
-            <tr><td>⚡ Protsessor</td><td>Exynos 1480 (4nm)</td></tr>
-            <tr><td>🔋 Batareya</td><td>5000 mAh</td></tr>
-            <tr><td>📷 Kamera</td><td>50MP + 12MP + 5MP</td></tr>
-            <tr><td>💧 Himoya</td><td>IP67 (suv va changdan himoya)</td></tr>
-            <tr><td>🔄 Yangilanish</td><td>4 yil Android yangilanishi</td></tr>
-        </table>
-
-        <p>📌 <strong>Kimga mos:</strong></p>
-        <span class="badge">✅ Sifatli kamera xohlaydiganlarga</span>
-        <span class="badge">✅ Uzoq ishlaydiganni xohlaydiganlarga</span>
-        <span class="badge">✅ O'rta byudjetdagilarga</span>
-
-        <div class="price">💰 4,357,000 so'mdan boshlab</div>
-        <a href="https://uzum.uz/ru/product/smartfon-samsung-galaxy-a55-5g-963730" class="btn">Uzumdan sotib olish →</a>
-    </div>
-
-    <!-- iPhone 15 -->
-    <div class="article">
-        <h2>🍎 iPhone 15 — To'liq Sharh</h2>
-        <p>iPhone 15 — Apple kompaniyasining 2023 yilgi flagman telefoni. Premium sifat, kuchli protsessor va uzoq xizmat muddati bilan mashhur.</p>
-
-        <table>
-            <tr><th>Xususiyat</th><th>Ma'lumot</th></tr>
-            <tr><td>📺 Ekran</td><td>6.1 dyuym, Super Retina XDR</td></tr>
-            <tr><td>⚡ Protsessor</td><td>Apple A16 Bionic</td></tr>
-            <tr><td>🔋 Batareya</td><td>3349 mAh</td></tr>
-            <tr><td>📷 Kamera</td><td>48MP asosiy</td></tr>
-            <tr><td>💧 Himoya</td><td>IP68 (6 metr chuqurlikda 30 daqiqa)</td></tr>
-            <tr><td>🔌 Zaryadlash</td><td>USB Type-C, MagSafe 15W</td></tr>
-        </table>
-
-        <p>📌 <strong>Kimga mos:</strong></p>
-        <span class="badge">✅ Premium sifat xohlaydiganlarga</span>
-        <span class="badge">✅ Apple ekotizimida bo'lganlarga</span>
-        <span class="badge">✅ Uzoq muddatga telefon olmoqchilarga</span>
-
-        <div class="price">💰 15,135,000 so'mdan boshlab</div>
-        <a href="https://ispace.uz/en/category/iphone-15" class="btn">Uzumdan sotib olish →</a>
-    </div>
-
-    <!-- Taqqoslash -->
-    <div class="compare">
-        <h2>⚖️ Samsung A55 vs iPhone 15 — Taqqoslash</h2>
-        <table>
-            <tr><th></th><th>Samsung A55</th><th>iPhone 15</th></tr>
-            <tr><td>💰 Narx</td><td>4,357,000 so'm</td><td>15,135,000 so'm</td></tr>
-            <tr><td>🔋 Batareya</td><td>Yaxshiroq</td><td>O'rtacha</td></tr>
-            <tr><td>📷 Kamera</td><td>Yaxshi</td><td>A'lo</td></tr>
-            <tr><td>💎 Sifat</td><td>Yaxshi</td><td>Premium</td></tr>
-        </table>
-    </div>
-
+<div class="header">
+  <div class="logo">TECHNO<span>BOP</span></div>
+  <div class="tagline">O'zbekistonda eng yaxshi texnologiyalar</div>
 </div>
 
-<footer>
-    <p>© 2025 Texnobop - Barcha huquqlar himoyalangan</p>
-</footer>
+<div class="step-bar">
+  <div class="step active" id="s1"><span class="step-num">1</span> Market tanlang</div>
+  <div class="step-arrow">›</div>
+  <div class="step" id="s2"><span class="step-num">2</span> Kategoriya</div>
+  <div class="step-arrow">›</div>
+  <div class="step" id="s3"><span class="step-num">3</span> Mahsulot</div>
+</div>
 
+<div class="section">
+  <div class="section-label">Qaysi marketdan sotib olasiz?</div>
+  <div class="market-grid">
+    <div class="market-btn" onclick="selectMarket('uzum',this)">
+      <div class="market-icon">🛒</div>
+      <div class="market-name">Uzum Market</div>
+      <div class="market-desc">uzum.uz</div>
+    </div>
+    <div class="market-btn" onclick="selectMarket('olcha',this)">
+      <div class="market-icon">🍒</div>
+      <div class="market-name">Olcha</div>
+      <div class="market-desc">olcha.uz</div>
+    </div>
+    <div class="market-btn" onclick="selectMarket('texnomart',this)">
+      <div class="market-icon">🏪</div>
+      <div class="market-name">Texnomart</div>
+      <div class="market-desc">texnomart.uz</div>
+    </div>
+  </div>
+
+  <div id="cat-section" class="hidden">
+    <div class="divider"></div>
+    <div class="section-label">Kategoriyani tanlang</div>
+    <div class="cat-grid">
+      <div class="cat-btn" onclick="selectCat('phones',this)">
+        <div class="cat-icon">📱</div>
+        <div class="cat-name">Telefonlar</div>
+      </div>
+      <div class="cat-btn" onclick="selectCat('laptops',this)">
+        <div class="cat-icon">💻</div>
+        <div class="cat-name">Noutbuklar</div>
+      </div>
+      <div class="cat-btn" onclick="selectCat('watches',this)">
+        <div class="cat-icon">⌚</div>
+        <div class="cat-name">Smart soatlar</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="products-section" class="hidden">
+    <div class="divider"></div>
+    <div class="section-label" id="prod-label">Mahsulotlar</div>
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</div>
+
+<footer>© 2025 Texnobop — Barcha huquqlar himoyalangan</footer>
+
+<script>
+const data = {
+  phones: [
+    {
+      name: "Samsung Galaxy A16",
+      badge: "Android",
+      specs: "6.7\" AMOLED · 50MP · 5000mAh · IP54 · 6 yil yangilanish",
+      price: "2,131,900 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/product/smartfon-samsung-galaxy-1352827",
+        olcha: "https://olcha.uz/ru/product/view/samsung-galaxy-a16",
+        texnomart: "https://texnomart.uz/uz/product/detail/357963/"
+      }
+    },
+    {
+      name: "Samsung Galaxy A56 5G",
+      badge: "5G",
+      specs: "6.7\" AMOLED 120Hz · Exynos 1580 · 5000mAh · IP67",
+      price: "5,460,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/ru/product/smartfon-samsung-galaxy-1602716",
+        olcha: "https://olcha.uz/ru/product/view/samsung-galaxy-a56-5g",
+        texnomart: "https://texnomart.uz/ru/product/detail/358327/"
+      }
+    },
+    {
+      name: "iPhone 15",
+      badge: "Premium",
+      specs: "6.1\" Retina · A16 Bionic · 48MP · IP68 · USB-C",
+      price: "15,135,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",
+        olcha: "https://olcha.uz/oz/product/view/apple-iphone-15",
+        texnomart: "https://texnomart.uz/ru/product/detail/356314/"
+      }
+    },
+    {
+      name: "Redmi Note 14 Pro",
+      badge: "200MP",
+      specs: "6.67\" AMOLED · 200MP · 5500mAh · 120W zaryadlash",
+      price: "5,074,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/product/smartfon-redmi-note-1466128",
+        olcha: "https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",
+        texnomart: "https://texnomart.uz/ru/product/detail/358105/"
+      }
+    },
+    {
+      name: "Xiaomi 15T",
+      badge: "Leica",
+      specs: "6.83\" AMOLED · Dimensity 8400 · 5500mAh · IP68",
+      price: "~9,000,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",
+        olcha: "https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",
+        texnomart: null
+      }
+    }
+  ],
+  laptops: [
+    {
+      name: "Lenovo IdeaPad Slim 3",
+      badge: "O'qish uchun",
+      specs: "15.6\" FHD · i5-13420H · 8GB · 512GB SSD",
+      price: "~5,500,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/ru/product/noutbuk-lenovo-ideapad-slim-3-16iru8-1102591",
+        olcha: "https://olcha.uz/oz/product/view/noutbuk-lenovo-ideapad-slim-3-i5-13420h-8512-gb-156",
+        texnomart: "https://texnomart.uz/uz/katalog/noutbuki-lenovo/"
+      }
+    },
+    {
+      name: "Lenovo Legion 5",
+      badge: "Gaming",
+      specs: "16\" OLED 240Hz · i9-14900HX · RTX 5070 · 16GB",
+      price: "~18,000,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=lenovo+legion+5",
+        olcha: "https://olcha.uz/oz/search?q=lenovo+legion+5",
+        texnomart: "https://texnomart.uz/uz/katalog/noutbuki-lenovo/"
+      }
+    },
+    {
+      name: "ASUS ROG Strix G16",
+      badge: "Gaming",
+      specs: "16\" 165Hz · i7-13650HX · RTX 4050 · 16GB DDR5",
+      price: "~14,000,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=asus+rog+strix+g16",
+        olcha: "https://olcha.uz/oz/search?q=asus+rog+strix+g16",
+        texnomart: "https://texnomart.uz/uz/katalog/noutbuki-asus/"
+      }
+    },
+    {
+      name: "HP ProBook 450 G10",
+      badge: "Biznes",
+      specs: "15.6\" FHD · i5-1335U · 8GB · 512GB SSD · 11 soat",
+      price: "~8,000,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=hp+probook+450+g10",
+        olcha: "https://olcha.uz/oz/search?q=hp+probook+450",
+        texnomart: "https://texnomart.uz/uz/katalog/noutbuki-hp/"
+      }
+    },
+    {
+      name: "Apple MacBook Pro M2",
+      badge: "Premium",
+      specs: "13.3\" Retina · Apple M2 · 8GB · 256GB · 22 soat",
+      price: "~20,000,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=macbook+pro+m2",
+        olcha: "https://olcha.uz/oz/search?q=macbook+pro+m2",
+        texnomart: "https://texnomart.uz/uz/katalog/apple-noutbuklari/"
+      }
+    }
+  ],
+  watches: [
+    {
+      name: "Apple Watch Series 10",
+      badge: "Premium",
+      specs: "LTPO OLED · ECG · SpO2 · Crash Detection · 18 soat",
+      price: "~5,000,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/ru/product/chasy-apple-watch-series-10-4246-1511581",
+        olcha: "https://olcha.uz/oz/manufacturer/apple/smart-watches",
+        texnomart: "https://texnomart.uz/uz/search/?q=apple+watch+series+10"
+      }
+    },
+    {
+      name: "Apple Watch SE",
+      badge: "Arzon Apple",
+      specs: "Retina OLED · Yurak urishi · SpO2 · GPS · 18 soat",
+      price: "~3,500,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=apple+watch+se",
+        olcha: "https://olcha.uz/oz/manufacturer/apple/smart-watches",
+        texnomart: "https://texnomart.uz/uz/search/?q=apple+watch+se"
+      }
+    },
+    {
+      name: "Samsung Galaxy Watch 7",
+      badge: "Android",
+      specs: "Super AMOLED · ECG · Qon shakari · GPS · 40 soat",
+      price: "~3,800,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=samsung+galaxy+watch+7",
+        olcha: "https://olcha.uz/oz/search?q=samsung+galaxy+watch+7",
+        texnomart: "https://texnomart.uz/uz/search/?q=samsung+galaxy+watch+7"
+      }
+    },
+    {
+      name: "Xiaomi Smart Band 9",
+      badge: "Eng arzon",
+      specs: "1.62\" AMOLED · 150+ sport · Yurak urishi · 21 kun",
+      price: "~500,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=xiaomi+smart+band+9",
+        olcha: "https://olcha.uz/oz/search?q=xiaomi+smart+band+9",
+        texnomart: "https://texnomart.uz/uz/search/?q=xiaomi+smart+band+9"
+      }
+    },
+    {
+      name: "Amazfit GTR Mini",
+      badge: "Sport",
+      specs: "AMOLED yumaloq · GPS · 120+ sport · 20 kun batareya",
+      price: "~1,200,000 so'm",
+      links: {
+        uzum: "https://uzum.uz/uz/search?query=amazfit+gtr+mini",
+        olcha: "https://olcha.uz/oz/search?q=amazfit+gtr+mini",
+        texnomart: "https://texnomart.uz/uz/search/?q=amazfit+gtr+mini"
+      }
+    }
+  ]
+};
+
+const marketNames = {
+  uzum: "Uzumdan sotib olish",
+  olcha: "Olchadan sotib olish",
+  texnomart: "Texnomartdan sotib olish"
+};
+
+let selectedMarket = null;
+
+function selectMarket(market, el) {
+  document.querySelectorAll('.market-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  selectedMarket = market;
+  document.getElementById('s2').classList.add('active');
+  document.getElementById('cat-section').classList.remove('hidden');
+  document.getElementById('products-section').classList.add('hidden');
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+}
+
+function selectCat(cat, el) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('s3').classList.add('active');
+  const labels = {phones:'Telefonlar', laptops:'Noutbuklar', watches:'Smart soatlar'};
+  document.getElementById('prod-label').textContent = labels[cat];
+  const grid = document.getElementById('products-grid');
+  grid.innerHTML = '';
+  data[cat].forEach(p => {
+    const link = p.links[selectedMarket];
+    const btnHtml = link
+      ? `<a class="product-btn" href="${link}" target="_blank">${marketNames[selectedMarket]} →</a>`
+      : `<div class="product-unavail">⚠ Bu marketda mavjud emas</div>`;
+    grid.innerHTML += `
+      <div class="product-card">
+        <span class="product-badge">${p.badge}</span>
+        <div class="product-name">${p.name}</div>
+        <div class="product-specs">${p.specs}</div>
+        <div class="product-price">${p.price}</div>
+        ${btnHtml}
+      </div>`;
+  });
+  document.getElementById('products-section').classList.remove('hidden');
+}
+</script>
 </body>
 </html>
