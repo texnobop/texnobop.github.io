@@ -15,10 +15,10 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .mkt-btn:hover{border-color:#3ea6ff;color:#fff}
 .mkt-btn.active{border-color:#3ea6ff;background:#0d2137;color:#3ea6ff}
 .mkt-btn img{width:28px;height:28px;object-fit:contain;border-radius:4px}
-.cat-bar{display:flex;gap:8px;padding:10px 20px;background:#181818;border-bottom:1px solid #272727;flex-wrap:wrap}
+.cat-bar{display:none;gap:8px;padding:10px 20px;background:#181818;border-bottom:1px solid #272727;flex-wrap:wrap}
 .cat-btn{padding:6px 16px;border-radius:20px;font-size:12px;border:1px solid #303030;background:#272727;color:#fff;cursor:pointer;transition:all 0.2s}
 .cat-btn.active{background:#3ea6ff;color:#0f0f0f;border-color:#3ea6ff;font-weight:bold}
-.section{padding:16px 20px}
+.section{display:none;padding:16px 20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .card{background:#1a1a1a;border-radius:12px;overflow:hidden;border:1px solid #272727;transition:all 0.2s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-3px);border-color:#3ea6ff}
@@ -46,27 +46,27 @@ footer{background:#111;border-top:1px solid #272727;text-align:center;padding:20
 </div>
 
 <div class="market-bar">
-  <div class="mkt-btn active" onclick="selectM('uzum',this)">
-    <img src="https://texnobop.github.io/images/logos/uzum-logo.png" alt="Uzum">
+  <div class="mkt-btn" onclick="selectM('uzum',this)">
+    <img src="https://texnobop.github.io/images/logos/uzum-logo.png" alt="Uzum" onerror="this.style.display='none'">
     Uzum Market
   </div>
   <div class="mkt-btn" onclick="selectM('olcha',this)">
-    <img src="https://texnobop.github.io/images/logos/olcha-logo.png" alt="Olcha">
+    <img src="https://texnobop.github.io/images/logos/olcha-logo.png" alt="Olcha" onerror="this.style.display='none'">
     Olcha
   </div>
   <div class="mkt-btn" onclick="selectM('texnomart',this)">
-    <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" alt="Texnomart">
+    <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" alt="Texnomart" onerror="this.style.display='none'">
     Texnomart
   </div>
 </div>
 
-<div class="cat-bar" id="cat-bar" style="display:none">
-  <div class="cat-btn active" onclick="selectC('phones',this)">📱 Telefonlar</div>
+<div class="cat-bar" id="cat-bar">
+  <div class="cat-btn" onclick="selectC('phones',this)">📱 Telefonlar</div>
   <div class="cat-btn" onclick="selectC('laptops',this)">💻 Noutbuklar</div>
   <div class="cat-btn" onclick="selectC('watches',this)">⌚ Smart Soatlar</div>
 </div>
 
-<div class="section">
+<div class="section" id="products-section">
   <div class="grid" id="grid"></div>
 </div>
 
@@ -74,26 +74,43 @@ footer{background:#111;border-top:1px solid #272727;text-align:center;padding:20
 
 <script>
 const svgs={
-  samsung:`<svg viewBox="0 0 60 100" width="60" height="100"><rect x="5" y="2" width="50" height="96" rx="10" fill="#1a1a2e" stroke="#1428a0" stroke-width="1.5"/><rect x="8" y="8" width="44" height="80" rx="5" fill="#0a0a1a"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#050515"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#0a1a4a" opacity="0.9"/><text x="30" y="33" text-anchor="middle" fill="#1428a0" font-size="8" font-weight="bold">SAMSUNG</text><rect x="14" y="44" width="32" height="12" rx="2" fill="#0a0a1a"/><rect x="14" y="59" width="32" height="3" rx="1" fill="#1428a0" opacity="0.5"/><rect x="14" y="64" width="22" height="3" rx="1" fill="#1428a0" opacity="0.3"/><circle cx="30" cy="92" r="4" fill="#1428a0" opacity="0.5"/></svg>`,
-  iphone:`<svg viewBox="0 0 60 100" width="60" height="100"><rect x="5" y="2" width="50" height="96" rx="12" fill="#1c1c1e" stroke="#3a3a3c" stroke-width="1.5"/><rect x="8" y="8" width="44" height="78" rx="8" fill="#0a0a0a"/><rect x="18" y="4" width="24" height="5" rx="2.5" fill="#3a3a3c"/><circle cx="30" cy="6.5" r="1.5" fill="#2a2a2a"/><rect x="10" y="12" width="40" height="68" rx="5" fill="#1a1a2e"/><rect x="14" y="18" width="32" height="22" rx="3" fill="#2a4a7a" opacity="0.8"/><rect x="14" y="44" width="32" height="12" rx="2" fill="#1a1a3e"/><rect x="14" y="59" width="32" height="3" rx="1" fill="#333"/><rect x="14" y="64" width="22" height="3" rx="1" fill="#333"/></svg>`,
-  xiaomi:`<svg viewBox="0 0 60 100" width="60" height="100"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a1a1a" stroke="#ff6900" stroke-width="1.5"/><rect x="8" y="8" width="44" height="80" rx="4" fill="#0d0d0d"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#1a0a0a"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#3a1000" opacity="0.8"/><text x="30" y="33" text-anchor="middle" fill="#ff6900" font-size="10" font-weight="bold">Mi</text><rect x="14" y="44" width="32" height="12" rx="2" fill="#1a0a0a"/><rect x="14" y="59" width="32" height="3" rx="1" fill="#333"/><rect x="14" y="64" width="22" height="3" rx="1" fill="#333"/><circle cx="30" cy="92" r="4" fill="#333"/></svg>`,
-  laptop:`<svg viewBox="0 0 120 80" width="110" height="73"><rect x="10" y="5" width="100" height="65" rx="5" fill="#2a2a2a" stroke="#444" stroke-width="1.5"/><rect x="14" y="9" width="92" height="57" rx="3" fill="#1a1a2e"/><rect x="16" y="11" width="88" height="53" rx="2" fill="#0a0a1a"/><rect x="20" y="15" width="80" height="40" rx="2" fill="#0d1a2e"/><rect x="24" y="20" width="72" height="5" rx="1" fill="#1e3a5f" opacity="0.7"/><rect x="24" y="28" width="50" height="4" rx="1" fill="#3ea6ff" opacity="0.5"/><rect x="24" y="34" width="65" height="4" rx="1" fill="#333"/><rect x="24" y="40" width="45" height="4" rx="1" fill="#333"/><rect x="24" y="46" width="55" height="4" rx="1" fill="#333"/><rect x="0" y="70" width="120" height="8" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="45" y="70" width="30" height="8" rx="2" fill="#333"/></svg>`,
-  gaming_laptop:`<svg viewBox="0 0 120 80" width="110" height="73"><rect x="10" y="5" width="100" height="65" rx="5" fill="#1a0a0a" stroke="#ff0000" stroke-width="2"/><rect x="14" y="9" width="92" height="57" rx="3" fill="#0d0d0d"/><rect x="16" y="11" width="88" height="53" rx="2" fill="#0a0000"/><rect x="20" y="15" width="80" height="40" rx="2" fill="#150000"/><rect x="24" y="20" width="72" height="5" rx="1" fill="#ff0000" opacity="0.4"/><rect x="24" y="28" width="50" height="4" rx="1" fill="#ff4400" opacity="0.6"/><rect x="24" y="34" width="65" height="4" rx="1" fill="#2a0000"/><rect x="24" y="40" width="45" height="4" rx="1" fill="#2a0000"/><text x="60" y="52" text-anchor="middle" fill="#ff0000" font-size="8" font-weight="bold" opacity="0.7">GAMING</text><rect x="0" y="70" width="120" height="8" rx="2" fill="#1a0000" stroke="#ff0000" stroke-width="1"/><rect x="45" y="70" width="30" height="8" rx="2" fill="#2a0000"/></svg>`,
-  macbook:`<svg viewBox="0 0 120 80" width="110" height="73"><rect x="10" y="5" width="100" height="65" rx="8" fill="#c0c0c0" stroke="#999" stroke-width="1"/><rect x="14" y="9" width="92" height="57" rx="5" fill="#e8e8e8"/><rect x="16" y="11" width="88" height="53" rx="3" fill="#f5f5f5"/><rect x="20" y="15" width="80" height="40" rx="2" fill="#1c1c1e"/><rect x="24" y="20" width="72" height="5" rx="1" fill="#3a3a3c" opacity="0.7"/><rect x="24" y="28" width="50" height="4" rx="1" fill="#48484a"/><rect x="24" y="34" width="65" height="4" rx="1" fill="#48484a"/><circle cx="60" cy="44" r="6" fill="#555" opacity="0.5"/><rect x="0" y="70" width="120" height="8" rx="3" fill="#b0b0b0" stroke="#999" stroke-width="1"/><rect x="40" y="70" width="40" height="8" rx="2" fill="#c8c8c8"/></svg>`,
-  apple_watch:`<svg viewBox="0 0 70 90" width="60" height="77"><rect x="27" y="0" width="16" height="18" rx="4" fill="#c0c0c0"/><rect x="27" y="72" width="16" height="18" rx="4" fill="#c0c0c0"/><rect x="10" y="20" width="50" height="52" rx="14" fill="#1c1c1e" stroke="#3a3a3c" stroke-width="1.5"/><rect x="13" y="23" width="44" height="46" rx="12" fill="#0a0a0a"/><rect x="15" y="25" width="40" height="42" rx="10" fill="#1a1a1a"/><rect x="18" y="28" width="34" height="36" rx="8" fill="#000"/><text x="35" y="42" text-anchor="middle" fill="#fff" font-size="7">9:41</text><rect x="20" y="45" width="30" height="3" rx="1" fill="#3ea6ff" opacity="0.7"/><rect x="20" y="50" width="20" height="3" rx="1" fill="#555"/><rect x="58" y="38" width="6" height="10" rx="3" fill="#3a3a3c"/></svg>`,
-  watch_round:`<svg viewBox="0 0 70 90" width="60" height="77"><rect x="28" y="0" width="14" height="18" rx="3" fill="#333"/><rect x="28" y="72" width="14" height="18" rx="3" fill="#333"/><circle cx="35" cy="45" r="28" fill="#1a1a2e" stroke="#444" stroke-width="2"/><circle cx="35" cy="45" r="24" fill="#0a0a1a"/><circle cx="35" cy="45" r="22" fill="#050510"/><line x1="35" y1="28" x2="35" y2="38" stroke="#3ea6ff" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="45" x2="44" y2="45" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="35" cy="45" r="2" fill="#3ea6ff"/><text x="35" y="58" text-anchor="middle" fill="#3ea6ff" font-size="6">12:00</text></svg>`,
-  band:`<svg viewBox="0 0 60 90" width="50" height="75"><rect x="22" y="0" width="16" height="20" rx="4" fill="#222"/><rect x="22" y="70" width="16" height="20" rx="4" fill="#222"/><rect x="12" y="22" width="36" height="46" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/><rect x="15" y="25" width="30" height="40" rx="6" fill="#0a0a0a"/><rect x="17" y="27" width="26" height="36" rx="5" fill="#000"/><text x="30" y="40" text-anchor="middle" fill="#3ea6ff" font-size="6">12:00</text><rect x="19" y="43" width="22" height="2" rx="1" fill="#3ea6ff" opacity="0.6"/><rect x="19" y="47" width="16" height="2" rx="1" fill="#555"/><rect x="19" y="51" width="19" height="2" rx="1" fill="#555"/></svg>`
+  samsung:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="10" fill="#1a1a2e" stroke="#1428a0" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#050515"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#0a1a4a"/><text x="30" y="33" text-anchor="middle" fill="#1428a0" font-size="8" font-weight="bold">SAMSUNG</text><rect x="14" y="44" width="32" height="12" rx="2" fill="#0a0a1a"/><rect x="14" y="59" width="32" height="3" rx="1" fill="#1428a0" opacity="0.5"/><circle cx="30" cy="92" r="4" fill="#1428a0" opacity="0.5"/></svg>`,
+  iphone:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="12" fill="#1c1c1e" stroke="#3a3a3c" stroke-width="1.5"/><rect x="18" y="4" width="24" height="5" rx="2.5" fill="#3a3a3c"/><rect x="10" y="12" width="40" height="68" rx="5" fill="#1a1a2e"/><rect x="14" y="18" width="32" height="22" rx="3" fill="#2a4a7a" opacity="0.8"/><rect x="14" y="44" width="32" height="12" rx="2" fill="#1a1a3e"/></svg>`,
+  xiaomi:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a1a1a" stroke="#ff6900" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#1a0a0a"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#3a1000"/><text x="30" y="33" text-anchor="middle" fill="#ff6900" font-size="10" font-weight="bold">Mi</text><circle cx="30" cy="92" r="4" fill="#333"/></svg>`,
+  laptop:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="5" fill="#2a2a2a" stroke="#444" stroke-width="1.5"/><rect x="16" y="11" width="88" height="48" rx="2" fill="#0a0a1a"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#0d1a2e"/><rect x="24" y="20" width="72" height="4" rx="1" fill="#1e3a5f" opacity="0.7"/><rect x="24" y="27" width="50" height="3" rx="1" fill="#3ea6ff" opacity="0.5"/><rect x="24" y="33" width="65" height="3" rx="1" fill="#333"/><rect x="0" y="65" width="120" height="7" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="45" y="65" width="30" height="7" rx="2" fill="#333"/></svg>`,
+  gaming_laptop:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="5" fill="#1a0a0a" stroke="#ff0000" stroke-width="2"/><rect x="16" y="11" width="88" height="48" rx="2" fill="#0a0000"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#150000"/><rect x="24" y="20" width="72" height="4" rx="1" fill="#ff0000" opacity="0.4"/><text x="60" y="48" text-anchor="middle" fill="#ff0000" font-size="8" font-weight="bold" opacity="0.7">GAMING</text><rect x="0" y="65" width="120" height="7" rx="2" fill="#1a0000" stroke="#ff0000" stroke-width="1"/></svg>`,
+  macbook:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="8" fill="#c0c0c0" stroke="#999" stroke-width="1"/><rect x="16" y="11" width="88" height="48" rx="3" fill="#1c1c1e"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#000"/><text x="60" y="38" text-anchor="middle" fill="#555" font-size="18">🍎</text><rect x="0" y="65" width="120" height="7" rx="3" fill="#b0b0b0" stroke="#999" stroke-width="1"/></svg>`,
+  apple_watch:`<svg viewBox="0 0 70 90" width="55" height="70"><rect x="27" y="0" width="16" height="18" rx="4" fill="#c0c0c0"/><rect x="27" y="72" width="16" height="18" rx="4" fill="#c0c0c0"/><rect x="10" y="20" width="50" height="50" rx="14" fill="#1c1c1e" stroke="#3a3a3c" stroke-width="1.5"/><rect x="18" y="28" width="34" height="34" rx="8" fill="#000"/><text x="35" y="42" text-anchor="middle" fill="#fff" font-size="7">9:41</text><rect x="20" y="45" width="30" height="3" rx="1" fill="#3ea6ff" opacity="0.7"/></svg>`,
+  watch_round:`<svg viewBox="0 0 70 90" width="55" height="70"><rect x="28" y="0" width="14" height="18" rx="3" fill="#333"/><rect x="28" y="72" width="14" height="18" rx="3" fill="#333"/><circle cx="35" cy="45" r="27" fill="#1a1a2e" stroke="#444" stroke-width="2"/><circle cx="35" cy="45" r="22" fill="#050510"/><line x1="35" y1="28" x2="35" y2="38" stroke="#3ea6ff" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="45" x2="44" y2="45" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="35" cy="45" r="2" fill="#3ea6ff"/></svg>`,
+  band:`<svg viewBox="0 0 60 90" width="45" height="68"><rect x="22" y="0" width="16" height="20" rx="4" fill="#222"/><rect x="22" y="70" width="16" height="20" rx="4" fill="#222"/><rect x="12" y="22" width="36" height="46" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/><rect x="17" y="27" width="26" height="36" rx="5" fill="#000"/><text x="30" y="40" text-anchor="middle" fill="#3ea6ff" font-size="6">12:00</text><rect x="19" y="43" width="22" height="2" rx="1" fill="#3ea6ff" opacity="0.6"/></svg>`
 };
 
 const deviceSvg={"samsung-a16":svgs.samsung,"samsung-a56":svgs.samsung,"iphone-15":svgs.iphone,"redmi-note-14":svgs.xiaomi,"xiaomi-15t":svgs.xiaomi,"lenovo-ideapad":svgs.laptop,"lenovo-legion":svgs.gaming_laptop,"asus-rog":svgs.gaming_laptop,"hp-probook":svgs.laptop,"macbook-m2":svgs.macbook,"apple-watch-10":svgs.apple_watch,"apple-watch-se":svgs.apple_watch,"samsung-watch-7":svgs.watch_round,"xiaomi-band-9":svgs.band,"amazfit-gtr":svgs.watch_round};
 
-const specs={"samsung-a16":[["📺","6.7\" Super AMOLED, 90Hz"],["⚡","Helio G99, 8 yadro"],["📷","50MP + 5MP + 2MP"],["🔋","5000mAh, 25W"],["💧","IP54 himoya"]],"samsung-a56":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1580 (4nm)"],["📷","50MP + 12MP + 5MP"],["🔋","5000mAh, 45W"],["💧","IP67 himoya"]],"iphone-15":[["📺","6.1\" Super Retina XDR"],["⚡","Apple A16 Bionic"],["📷","48MP + 12MP"],["🔋","3349mAh, USB-C"],["💧","IP68 (6m, 30min)"]],"redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G100 Ultra"],["📷","200MP + 8MP + 2MP"],["🔋","5500mAh, 120W"],["💧","IP54 himoya"]],"xiaomi-15t":[["📺","6.83\" AMOLED, 144Hz"],["⚡","Dimensity 8400 (4nm)"],["📷","50MP Leica + 50MP + 12MP"],["🔋","5500mAh, 67W"],["💧","IP68 himoya"]],"lenovo-ideapad":[["📺","15.6\" FHD IPS"],["⚡","Intel i5-13420H"],["💾","8GB DDR5 + 512GB SSD"],["🔋","57Wh, 8-10 soat"],["⚖️","1.62kg"]],"lenovo-legion":[["📺","16\" OLED, 240Hz"],["⚡","Intel i9-14900HX"],["🎮","RTX 5070 8GB"],["💾","16GB DDR5 + 1TB"],["🔋","80Wh"]],"asus-rog":[["📺","16\" WUXGA, 165Hz"],["⚡","Intel i7-13650HX"],["🎮","RTX 4050 6GB"],["💾","16GB DDR5"],["🔋","90Wh"]],"hp-probook":[["📺","15.6\" FHD IPS"],["⚡","Intel i5-1335U"],["💾","8GB DDR4 + 512GB"],["🔋","56Wh, 9-11 soat"],["🔒","TPM 2.0, barmoq izi"]],"macbook-m2":[["📺","13.3\" Retina, 500nits"],["⚡","Apple M2 (8 yadro)"],["💾","8GB + 256GB SSD"],["🔋","58Wh, 18-22 soat"],["⚖️","1.4kg"]],"apple-watch-10":[["📺","LTPO OLED, Always-On"],["⚡","Apple S10 chip"],["💓","ECG, SpO2, Harorat"],["🔋","18 soat"],["💧","IP6X, 50m suv"]],"apple-watch-se":[["📺","Retina LTPO OLED"],["⚡","Apple S8 chip"],["💓","Yurak urishi, SpO2"],["🔋","18 soat"],["💧","IP6X, 50m suv"]],"samsung-watch-7":[["📺","Super AMOLED, Always-On"],["⚡","Exynos W1000"],["💓","ECG, Qon shakari, SpO2"],["🔋","40 soat"],["💧","IP68, 5ATM"]],"xiaomi-band-9":[["📺","1.62\" AMOLED, 60Hz"],["💓","Yurak urishi, SpO2"],["🏃","150+ sport rejimi"],["🔋","21 kun"],["💧","5ATM (50m)"]],"amazfit-gtr":[["📺","1.28\" AMOLED yumaloq"],["📍","To'liq GPS"],["🏃","120+ sport rejimi"],["🔋","20 kun"],["💧","5ATM (50m)"]]};
+const specs={"samsung-a16":[["📺","6.7\" AMOLED, 90Hz"],["⚡","Helio G99"],["📷","50MP + 5MP"],["🔋","5000mAh, 25W"],["💧","IP54"]],"samsung-a56":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1580"],["📷","50MP + 12MP"],["🔋","5000mAh, 45W"],["💧","IP67"]],"iphone-15":[["📺","6.1\" Retina XDR"],["⚡","A16 Bionic"],["📷","48MP + 12MP"],["🔋","3349mAh"],["💧","IP68"]],"redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G100 Ultra"],["📷","200MP"],["🔋","5500mAh, 120W"],["💧","IP54"]],"xiaomi-15t":[["📺","6.83\" AMOLED, 144Hz"],["⚡","Dimensity 8400"],["📷","50MP Leica"],["🔋","5500mAh, 67W"],["💧","IP68"]],"lenovo-ideapad":[["📺","15.6\" FHD IPS"],["⚡","i5-13420H"],["💾","8GB + 512GB SSD"],["🔋","8-10 soat"],["⚖️","1.62kg"]],"lenovo-legion":[["📺","16\" OLED, 240Hz"],["⚡","i9-14900HX"],["🎮","RTX 5070 8GB"],["💾","16GB + 1TB"],["🔋","80Wh"]],"asus-rog":[["📺","16\" WUXGA, 165Hz"],["⚡","i7-13650HX"],["🎮","RTX 4050 6GB"],["💾","16GB DDR5"],["🔋","90Wh"]],"hp-probook":[["📺","15.6\" FHD IPS"],["⚡","i5-1335U"],["💾","8GB + 512GB"],["🔋","9-11 soat"],["🔒","TPM 2.0"]],"macbook-m2":[["📺","13.3\" Retina"],["⚡","Apple M2"],["💾","8GB + 256GB"],["🔋","18-22 soat"],["⚖️","1.4kg"]],"apple-watch-10":[["📺","LTPO OLED"],["💓","ECG, SpO2"],["🔋","18 soat"],["💧","50m suv"],["⚡","S10 chip"]],"apple-watch-se":[["📺","Retina OLED"],["💓","Yurak, SpO2"],["🔋","18 soat"],["💧","50m suv"],["⚡","S8 chip"]],"samsung-watch-7":[["📺","Super AMOLED"],["💓","ECG, Qon shakari"],["🔋","40 soat"],["💧","IP68, 5ATM"],["⚡","Exynos W1000"]],"xiaomi-band-9":[["📺","1.62\" AMOLED"],["💓","Yurak, SpO2"],["🏃","150+ sport"],["🔋","21 kun"],["💧","5ATM"]],"amazfit-gtr":[["📺","1.28\" AMOLED"],["📍","GPS"],["🏃","120+ sport"],["🔋","20 kun"],["💧","5ATM"]]};
 
 const data={phones:[{id:"samsung-a16",name:"Samsung Galaxy A16",badge:"ANDROID",prices:{uzum:"2,039,000",olcha:"2,131,900",texnomart:"2,550,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-samsung-galaxy-1352827",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a16",texnomart:"https://texnomart.uz/uz/product/detail/357963/"}},{id:"samsung-a56",name:"Samsung Galaxy A56 5G",badge:"5G",prices:{uzum:"6,500,000",olcha:"10,100,000",texnomart:"5,360,000"},links:{uzum:"https://uzum.uz/ru/product/smartfon-samsung-galaxy-1602716",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a56-5g",texnomart:"https://texnomart.uz/ru/product/detail/358327/"}},{id:"iphone-15",name:"iPhone 15",badge:"PREMIUM",prices:{uzum:"15,135,000",olcha:"15,135,000",texnomart:"14,230,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",olcha:"https://olcha.uz/oz/product/view/apple-iphone-15",texnomart:"https://texnomart.uz/ru/product/detail/356314/"}},{id:"redmi-note-14",name:"Redmi Note 14 Pro",badge:"200MP",prices:{uzum:"3,997,120",olcha:"4,360,000",texnomart:"4,285,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1466128",olcha:"https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",texnomart:"https://texnomart.uz/ru/product/detail/358105/"}},{id:"xiaomi-15t",name:"Xiaomi 15T",badge:"LEICA",prices:{uzum:"9,150,000",olcha:"9,267,993",texnomart:null},links:{uzum:"https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",olcha:"https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",texnomart:null}}],laptops:[{id:"lenovo-ideapad",name:"Lenovo IdeaPad Slim 3",badge:"O'QISH",prices:{uzum:"7,247,000",olcha:"5,500,000",texnomart:"3,990,000"},links:{uzum:"https://uzum.uz/ru/product/noutbuk-lenovo-ideapad-slim-3-16iru8-1102591",olcha:"https://olcha.uz/oz/product/view/noutbuk-lenovo-ideapad-slim-3-i5-13420h-8512-gb-156",texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/"}},{id:"lenovo-legion",name:"Lenovo Legion 5",badge:"GAMING",prices:{uzum:null,olcha:null,texnomart:"18,647,000"},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/"}},{id:"asus-rog",name:"ASUS ROG Strix G16",badge:"GAMING",prices:{uzum:null,olcha:null,texnomart:"14,000,000"},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-asus/"}},{id:"hp-probook",name:"HP ProBook 450 G10",badge:"BIZNES",prices:{uzum:null,olcha:null,texnomart:"6,890,000"},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-hp/"}},{id:"macbook-m2",name:"Apple MacBook Pro M2",badge:"PREMIUM",prices:{uzum:"20,832,000",olcha:null,texnomart:null},links:{uzum:"https://uzum.uz/uz/search?query=macbook+pro+m2",olcha:null,texnomart:null}}],watches:[{id:"apple-watch-10",name:"Apple Watch Series 10",badge:"PREMIUM",prices:{uzum:"5,000,000",olcha:null,texnomart:null},links:{uzum:"https://uzum.uz/ru/product/chasy-apple-watch-series-10-4246-1511581",olcha:null,texnomart:null}},{id:"apple-watch-se",name:"Apple Watch SE",badge:"APPLE",prices:{uzum:null,olcha:null,texnomart:null},links:{uzum:null,olcha:null,texnomart:null}},{id:"samsung-watch-7",name:"Samsung Galaxy Watch 7",badge:"ANDROID",prices:{uzum:"3,399,000",olcha:"3,399,000",texnomart:"3,099,000"},links:{uzum:"https://uzum.uz/uz/search?query=samsung+galaxy+watch+7",olcha:"https://olcha.uz/oz/search?q=samsung+galaxy+watch+7",texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+watch+7"}},{id:"xiaomi-band-9",name:"Xiaomi Smart Band 9",badge:"ARZON",prices:{uzum:"450,000",olcha:"450,000",texnomart:"450,000"},links:{uzum:"https://uzum.uz/uz/search?query=xiaomi+smart+band+9",olcha:"https://olcha.uz/oz/search?q=xiaomi+smart+band+9",texnomart:"https://texnomart.uz/uz/search/?q=xiaomi+smart+band+9"}},{id:"amazfit-gtr",name:"Amazfit GTR Mini",badge:"SPORT",prices:{uzum:null,olcha:null,texnomart:null},links:{uzum:null,olcha:null,texnomart:null}}]};
 
 const mktNames={uzum:"Uzumdan sotib olish",olcha:"Olchadan sotib olish",texnomart:"Texnomartdan sotib olish"};
 const mktLogos={uzum:"https://texnobop.github.io/images/logos/uzum-logo.png",olcha:"https://texnobop.github.io/images/logos/olcha-logo.png",texnomart:"https://texnobop.github.io/images/logos/texnomart-logo.png"};
 let curMarket="uzum",curCat="phones";
+
+function selectM(m,el){
+  document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  curMarket=m;
+  document.getElementById('cat-bar').style.display='flex';
+  document.getElementById('products-section').style.display='none';
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+}
+
+function selectC(c,el){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  curCat=c;
+  document.getElementById('products-section').style.display='block';
+  render();
+}
 
 function render(){
   const grid=document.getElementById("grid");
@@ -113,7 +130,7 @@ function render(){
       </div>
       <div class="card-body">
         <div class="card-name">${p.name}</div>
-        <div class="card-specs">${specRows}</div>
+        <div style="display:flex;flex-direction:column;gap:3px">${specRows}</div>
         <a class="card-btn ${isSoon?'soon':''}" href="${isSoon?searchUrl:link}" target="_blank">
           <img src="${mktLogos[curMarket]}" alt="${curMarket}" onerror="this.style.display='none'">
           ${isSoon?'Tez kunda...':mktNames[curMarket]+' →'}
@@ -122,16 +139,6 @@ function render(){
     </div>`;
   });
 }
-
-function selectM(m,el){
-  document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');curMarket=m;render();
-}
-function selectC(c,el){
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');curCat=c;render();
-}
-render();
 </script>
 </body>
 </html>
