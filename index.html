@@ -7,67 +7,130 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-height:100vh}
-.header{background:#0f0f0f;padding:14px 20px;border-bottom:1px solid #272727}
-.logo{font-size:22px;font-weight:bold;color:#fff}.logo span{color:#3ea6ff}
-.tagline{font-size:10px;color:#aaa;margin-top:2px}
-.market-bar{display:flex;gap:10px;padding:12px 20px;background:#0f0f0f;border-bottom:1px solid #272727;flex-wrap:wrap}
-.mkt-btn{display:flex;align-items:center;gap:8px;padding:7px 16px;border-radius:8px;font-size:13px;font-weight:bold;border:2px solid #303030;background:#1a1a1a;color:#aaa;cursor:pointer;transition:all 0.2s}
-.mkt-btn:hover{border-color:#3ea6ff;color:#fff}
-.mkt-btn.active{border-color:#3ea6ff;background:#0d2137;color:#3ea6ff}
-.mkt-btn img{width:28px;height:28px;object-fit:contain;border-radius:4px}
-.cat-bar{display:none;gap:8px;padding:10px 20px;background:#181818;border-bottom:1px solid #272727;flex-wrap:wrap}
-.cat-btn{padding:6px 16px;border-radius:20px;font-size:12px;border:1px solid #303030;background:#272727;color:#fff;cursor:pointer;transition:all 0.2s}
-.cat-btn.active{background:#3ea6ff;color:#0f0f0f;border-color:#3ea6ff;font-weight:bold}
-.section{display:none;padding:16px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-.card{background:#1a1a1a;border-radius:12px;overflow:hidden;border:1px solid #272727;transition:all 0.2s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-3px);border-color:#3ea6ff}
+
+.header{background:#0f0f0f;padding:20px;text-align:center;border-bottom:1px solid #272727}
+.logo{font-size:28px;font-weight:bold;color:#fff;letter-spacing:2px}
+.logo span{color:#3ea6ff}
+.tagline{font-size:11px;color:#aaa;margin-top:4px;letter-spacing:1px}
+
+.step-wrap{max-width:800px;margin:0 auto;padding:30px 20px}
+
+.step-label{font-size:11px;letter-spacing:2px;color:#555;text-transform:uppercase;text-align:center;margin-bottom:16px}
+
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:10px}
+.mkt-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px 10px;border-radius:16px;font-size:13px;font-weight:bold;border:2px solid #272727;background:#1a1a1a;color:#888;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+.mkt-btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(62,166,255,0.1);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.4s,height 0.4s}
+.mkt-btn:hover::before{width:200px;height:200px}
+.mkt-btn:hover{border-color:#3ea6ff;color:#fff;transform:translateY(-3px)}
+.mkt-btn.active{border-color:#3ea6ff;background:linear-gradient(135deg,#0d2137,#0a1a2e);color:#3ea6ff;transform:translateY(-3px);box-shadow:0 8px 25px rgba(62,166,255,0.2)}
+.mkt-btn img{width:48px;height:48px;object-fit:contain;border-radius:10px}
+.mkt-btn span{font-size:12px}
+
+.divider{display:flex;align-items:center;gap:12px;margin:24px 0}
+.divider-line{flex:1;height:1px;background:#272727}
+.divider-icon{font-size:18px;color:#555}
+
+.cat-wrap{display:none;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cat-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 10px;border-radius:14px;font-size:13px;font-weight:bold;border:2px solid #272727;background:#1a1a1a;color:#888;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+.cat-btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(62,166,255,0.08);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.4s,height 0.4s}
+.cat-btn:hover::before{width:200px;height:200px}
+.cat-btn:hover{border-color:#3ea6ff;color:#fff;transform:translateY(-2px)}
+.cat-btn.active{border-color:#3ea6ff;background:linear-gradient(135deg,#0d2137,#0a1a2e);color:#3ea6ff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(62,166,255,0.15)}
+.cat-icon{font-size:28px}
+.cat-name{font-size:12px}
+
+.products-wrap{display:none;animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.products-section{max-width:1100px;margin:0 auto;padding:0 20px 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+
+.card{background:#1a1a1a;border-radius:14px;overflow:hidden;border:1px solid #272727;transition:all 0.3s;display:flex;flex-direction:column;animation:cardIn 0.4s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.card:hover{transform:translateY(-5px);border-color:#3ea6ff;box-shadow:0 10px 30px rgba(62,166,255,0.1)}
+
 .card-thumb{height:150px;display:flex;align-items:center;justify-content:center;background:#222;position:relative}
-.card-badge{position:absolute;top:8px;left:8px;background:#3ea6ff;color:#0f0f0f;font-size:9px;font-weight:bold;padding:2px 8px;border-radius:4px}
-.card-price-tag{position:absolute;bottom:8px;right:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:bold;padding:3px 8px;border-radius:4px}
-.card-price-tag.soon{background:#555}
-.card-body{padding:12px;flex:1;display:flex;flex-direction:column;gap:6px}
-.card-name{font-size:13px;font-weight:bold;color:#fff;line-height:1.3}
-.spec-row{display:flex;align-items:center;gap:5px;font-size:10px;color:#aaa}
+.card-badge{position:absolute;top:8px;left:8px;background:#3ea6ff;color:#0f0f0f;font-size:9px;font-weight:bold;padding:3px 10px;border-radius:20px}
+.card-price-tag{position:absolute;bottom:8px;right:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:bold;padding:3px 10px;border-radius:20px}
+.card-price-tag.soon{background:#444}
+
+.card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card-name{font-size:13px;font-weight:bold;color:#fff;line-height:1.4}
+.spec-row{display:flex;align-items:center;gap:6px;font-size:10px;color:#888}
 .spec-icon{font-size:11px;width:16px;text-align:center}
-.card-btn{display:flex;align-items:center;justify-content:center;gap:6px;background:#3ea6ff;color:#0f0f0f;padding:8px;border-radius:6px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.2s}
-.card-btn:hover{background:#65b8ff}
-.card-btn.soon{background:#272727;color:#aaa}
-.card-btn.soon:hover{background:#333;color:#fff}
-.card-btn img{width:18px;height:18px;object-fit:contain;border-radius:3px}
-footer{background:#111;border-top:1px solid #272727;text-align:center;padding:20px;font-size:11px;color:#555;margin-top:20px}
+
+.card-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1a6abf,#3ea6ff);color:#fff;padding:10px;border-radius:10px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.3s;border:none}
+.card-btn:hover{background:linear-gradient(135deg,#3ea6ff,#65b8ff);transform:scale(1.02);box-shadow:0 4px 15px rgba(62,166,255,0.3)}
+.card-btn.soon{background:linear-gradient(135deg,#2a2a2a,#333);color:#666;cursor:pointer}
+.card-btn.soon:hover{background:linear-gradient(135deg,#333,#444);color:#aaa;transform:scale(1.02)}
+.card-btn img{width:18px;height:18px;object-fit:contain;border-radius:4px}
+
+footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24px;font-size:11px;color:#444;margin-top:10px}
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="logo">techno<span>bop</span></div>
-  <div class="tagline">O'zbekistonda eng yaxshi texnologiyalar</div>
+  <div class="tagline">O'ZBEKISTONDA ENG YAXSHI TEXNOLOGIYALAR</div>
 </div>
 
-<div class="market-bar">
-  <div class="mkt-btn" onclick="selectM('uzum',this)">
-    <img src="https://texnobop.github.io/images/logos/uzum-logo.png" alt="Uzum" onerror="this.style.display='none'">
-    Uzum Market
+<div class="step-wrap">
+  <div class="step-label">01 — Marketni tanlang</div>
+  <div class="market-grid">
+    <div class="mkt-btn" onclick="selectM('uzum',this)">
+      <img src="https://texnobop.github.io/images/logos/uzum-logo.png" alt="Uzum" onerror="this.style.display='none'">
+      <span>Uzum Market</span>
+    </div>
+    <div class="mkt-btn" onclick="selectM('olcha',this)">
+      <img src="https://texnobop.github.io/images/logos/olcha-logo.png" alt="Olcha" onerror="this.style.display='none'">
+      <span>Olcha</span>
+    </div>
+    <div class="mkt-btn" onclick="selectM('texnomart',this)">
+      <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" alt="Texnomart" onerror="this.style.display='none'">
+      <span>Texnomart</span>
+    </div>
   </div>
-  <div class="mkt-btn" onclick="selectM('olcha',this)">
-    <img src="https://texnobop.github.io/images/logos/olcha-logo.png" alt="Olcha" onerror="this.style.display='none'">
-    Olcha
+
+  <div class="divider" id="divider1" style="display:none">
+    <div class="divider-line"></div>
+    <div class="divider-icon">↓</div>
+    <div class="divider-line"></div>
   </div>
-  <div class="mkt-btn" onclick="selectM('texnomart',this)">
-    <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" alt="Texnomart" onerror="this.style.display='none'">
-    Texnomart
+
+  <div class="cat-wrap" id="cat-wrap">
+    <div class="step-label">02 — Kategoriyani tanlang</div>
+    <div class="cat-grid">
+      <div class="cat-btn" onclick="selectC('phones',this)">
+        <div class="cat-icon">📱</div>
+        <div class="cat-name">Telefonlar</div>
+      </div>
+      <div class="cat-btn" onclick="selectC('laptops',this)">
+        <div class="cat-icon">💻</div>
+        <div class="cat-name">Noutbuklar</div>
+      </div>
+      <div class="cat-btn" onclick="selectC('watches',this)">
+        <div class="cat-icon">⌚</div>
+        <div class="cat-name">Smart Soatlar</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="cat-bar" id="cat-bar">
-  <div class="cat-btn" onclick="selectC('phones',this)">📱 Telefonlar</div>
-  <div class="cat-btn" onclick="selectC('laptops',this)">💻 Noutbuklar</div>
-  <div class="cat-btn" onclick="selectC('watches',this)">⌚ Smart Soatlar</div>
+<div class="divider" id="divider2" style="display:none;max-width:800px;margin:0 auto;padding:0 20px">
+  <div class="divider-line"></div>
+  <div class="divider-icon">↓</div>
+  <div class="divider-line"></div>
 </div>
 
-<div class="section" id="products-section">
-  <div class="grid" id="grid"></div>
+<div class="products-wrap" id="products-wrap">
+  <div class="products-section">
+    <div class="step-label" style="text-align:center;margin-bottom:20px" id="prod-label">03 — Mahsulotlar</div>
+    <div class="grid" id="grid"></div>
+  </div>
 </div>
 
 <footer>© 2025 Texnobop — Barcha huquqlar himoyalangan</footer>
@@ -93,14 +156,19 @@ const data={phones:[{id:"samsung-a16",name:"Samsung Galaxy A16",badge:"ANDROID",
 
 const mktNames={uzum:"Uzumdan sotib olish",olcha:"Olchadan sotib olish",texnomart:"Texnomartdan sotib olish"};
 const mktLogos={uzum:"https://texnobop.github.io/images/logos/uzum-logo.png",olcha:"https://texnobop.github.io/images/logos/olcha-logo.png",texnomart:"https://texnobop.github.io/images/logos/texnomart-logo.png"};
+const catLabels={phones:"📱 Telefonlar",laptops:"💻 Noutbuklar",watches:"⌚ Smart Soatlar"};
 let curMarket="uzum",curCat="phones";
 
 function selectM(m,el){
   document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   curMarket=m;
-  document.getElementById('cat-bar').style.display='flex';
-  document.getElementById('products-section').style.display='none';
+  const catWrap=document.getElementById('cat-wrap');
+  const divider1=document.getElementById('divider1');
+  catWrap.style.display='block';
+  divider1.style.display='flex';
+  document.getElementById('products-wrap').style.display='none';
+  document.getElementById('divider2').style.display='none';
   document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
 }
 
@@ -108,21 +176,25 @@ function selectC(c,el){
   document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   curCat=c;
-  document.getElementById('products-section').style.display='block';
+  document.getElementById('prod-label').textContent='03 — '+catLabels[c];
+  const pw=document.getElementById('products-wrap');
+  const d2=document.getElementById('divider2');
+  pw.style.display='block';
+  d2.style.display='flex';
   render();
 }
 
 function render(){
   const grid=document.getElementById("grid");
   grid.innerHTML="";
-  data[curCat].forEach(p=>{
+  data[curCat].forEach((p,i)=>{
     const price=p.prices[curMarket];
     const link=p.links[curMarket];
     const isSoon=!price||!link;
     const searchUrl=`https://${curMarket}.uz/uz/search?query=${encodeURIComponent(p.name)}`;
     const specRows=(specs[p.id]||[]).map(s=>`<div class="spec-row"><span class="spec-icon">${s[0]}</span><span>${s[1]}</span></div>`).join('');
     grid.innerHTML+=`
-    <div class="card">
+    <div class="card" style="animation-delay:${i*0.07}s">
       <div class="card-thumb">
         ${deviceSvg[p.id]||''}
         <span class="card-badge">${p.badge}</span>
