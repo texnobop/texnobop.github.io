@@ -7,17 +7,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-height:100vh}
-
 .header{background:#0f0f0f;padding:20px;text-align:center;border-bottom:1px solid #272727}
 .logo{font-size:28px;font-weight:bold;color:#fff;letter-spacing:2px}
 .logo span{color:#3ea6ff}
 .tagline{font-size:11px;color:#aaa;margin-top:4px;letter-spacing:1px}
-
-.step-wrap{max-width:800px;margin:0 auto;padding:30px 20px}
-
+.step-wrap{max-width:900px;margin:0 auto;padding:30px 20px}
 .step-label{font-size:11px;letter-spacing:2px;color:#555;text-transform:uppercase;text-align:center;margin-bottom:16px}
-
-.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:10px}
+.market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:10px}
 .mkt-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px 10px;border-radius:16px;font-size:13px;font-weight:bold;border:2px solid #272727;background:#1a1a1a;color:#888;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
 .mkt-btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(62,166,255,0.1);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.4s,height 0.4s}
 .mkt-btn:hover::before{width:200px;height:200px}
@@ -25,14 +21,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .mkt-btn.active{border-color:#3ea6ff;background:linear-gradient(135deg,#0d2137,#0a1a2e);color:#3ea6ff;transform:translateY(-3px);box-shadow:0 8px 25px rgba(62,166,255,0.2)}
 .mkt-btn img{width:48px;height:48px;object-fit:contain;border-radius:10px}
 .mkt-btn span{font-size:12px}
-
 .divider{display:flex;align-items:center;gap:12px;margin:24px 0}
 .divider-line{flex:1;height:1px;background:#272727}
 .divider-icon{font-size:18px;color:#555}
-
 .cat-wrap{display:none;animation:slideDown 0.4s ease}
 @keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
-
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .cat-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 10px;border-radius:14px;font-size:13px;font-weight:bold;border:2px solid #272727;background:#1a1a1a;color:#888;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
 .cat-btn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(62,166,255,0.08);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.4s,height 0.4s}
@@ -41,33 +34,26 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .cat-btn.active{border-color:#3ea6ff;background:linear-gradient(135deg,#0d2137,#0a1a2e);color:#3ea6ff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(62,166,255,0.15)}
 .cat-icon{font-size:28px}
 .cat-name{font-size:12px}
-
 .products-wrap{display:none;animation:fadeUp 0.4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
 .products-section{max-width:1100px;margin:0 auto;padding:0 20px 40px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-
 .card{background:#1a1a1a;border-radius:14px;overflow:hidden;border:1px solid #272727;transition:all 0.3s;display:flex;flex-direction:column;animation:cardIn 0.4s ease both}
 @keyframes cardIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 .card:hover{transform:translateY(-5px);border-color:#3ea6ff;box-shadow:0 10px 30px rgba(62,166,255,0.1)}
-
 .card-thumb{height:150px;display:flex;align-items:center;justify-content:center;background:#222;position:relative}
 .card-badge{position:absolute;top:8px;left:8px;background:#3ea6ff;color:#0f0f0f;font-size:9px;font-weight:bold;padding:3px 10px;border-radius:20px}
 .card-price-tag{position:absolute;bottom:8px;right:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:bold;padding:3px 10px;border-radius:20px}
 .card-price-tag.soon{background:#444}
-
 .card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
 .card-name{font-size:13px;font-weight:bold;color:#fff;line-height:1.4}
 .spec-row{display:flex;align-items:center;gap:6px;font-size:10px;color:#888}
 .spec-icon{font-size:11px;width:16px;text-align:center}
-
-.card-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1a6abf,#3ea6ff);color:#fff;padding:10px;border-radius:10px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.3s;border:none}
+.card-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1a6abf,#3ea6ff);color:#fff;padding:10px;border-radius:10px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.3s}
 .card-btn:hover{background:linear-gradient(135deg,#3ea6ff,#65b8ff);transform:scale(1.02);box-shadow:0 4px 15px rgba(62,166,255,0.3)}
 .card-btn.soon{background:linear-gradient(135deg,#2a2a2a,#333);color:#666;cursor:pointer}
 .card-btn.soon:hover{background:linear-gradient(135deg,#333,#444);color:#aaa;transform:scale(1.02)}
 .card-btn img{width:18px;height:18px;object-fit:contain;border-radius:4px}
-
 footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24px;font-size:11px;color:#444;margin-top:10px}
 </style>
 </head>
@@ -92,6 +78,10 @@ footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24
     <div class="mkt-btn" onclick="selectM('texnomart',this)">
       <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" alt="Texnomart" onerror="this.style.display='none'">
       <span>Texnomart</span>
+    </div>
+    <div class="mkt-btn" onclick="selectM('mediapark',this)">
+      <img src="https://texnobop.github.io/images/logos/mediapark-logo.png" alt="Mediapark" onerror="this.style.display='none'">
+      <span>Mediapark</span>
     </div>
   </div>
 
@@ -120,7 +110,7 @@ footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24
   </div>
 </div>
 
-<div class="divider" id="divider2" style="display:none;max-width:800px;margin:0 auto;padding:0 20px">
+<div class="divider" id="divider2" style="display:none;max-width:900px;margin:0 auto;padding:0 20px">
   <div class="divider-line"></div>
   <div class="divider-icon">↓</div>
   <div class="divider-line"></div>
@@ -140,6 +130,7 @@ const svgs={
   samsung:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="10" fill="#1a1a2e" stroke="#1428a0" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#050515"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#0a1a4a"/><text x="30" y="33" text-anchor="middle" fill="#1428a0" font-size="8" font-weight="bold">SAMSUNG</text><rect x="14" y="44" width="32" height="12" rx="2" fill="#0a0a1a"/><rect x="14" y="59" width="32" height="3" rx="1" fill="#1428a0" opacity="0.5"/><circle cx="30" cy="92" r="4" fill="#1428a0" opacity="0.5"/></svg>`,
   iphone:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="12" fill="#1c1c1e" stroke="#3a3a3c" stroke-width="1.5"/><rect x="18" y="4" width="24" height="5" rx="2.5" fill="#3a3a3c"/><rect x="10" y="12" width="40" height="68" rx="5" fill="#1a1a2e"/><rect x="14" y="18" width="32" height="22" rx="3" fill="#2a4a7a" opacity="0.8"/><rect x="14" y="44" width="32" height="12" rx="2" fill="#1a1a3e"/></svg>`,
   xiaomi:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a1a1a" stroke="#ff6900" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#1a0a0a"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#3a1000"/><text x="30" y="33" text-anchor="middle" fill="#ff6900" font-size="10" font-weight="bold">Mi</text><circle cx="30" cy="92" r="4" fill="#333"/></svg>`,
+  poco:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a0a1a" stroke="#9b59b6" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#0d000d"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#2d0050"/><text x="30" y="33" text-anchor="middle" fill="#9b59b6" font-size="9" font-weight="bold">POCO</text><circle cx="30" cy="92" r="4" fill="#9b59b6" opacity="0.5"/></svg>`,
   laptop:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="5" fill="#2a2a2a" stroke="#444" stroke-width="1.5"/><rect x="16" y="11" width="88" height="48" rx="2" fill="#0a0a1a"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#0d1a2e"/><rect x="24" y="20" width="72" height="4" rx="1" fill="#1e3a5f" opacity="0.7"/><rect x="24" y="27" width="50" height="3" rx="1" fill="#3ea6ff" opacity="0.5"/><rect x="24" y="33" width="65" height="3" rx="1" fill="#333"/><rect x="0" y="65" width="120" height="7" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="45" y="65" width="30" height="7" rx="2" fill="#333"/></svg>`,
   gaming_laptop:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="5" fill="#1a0a0a" stroke="#ff0000" stroke-width="2"/><rect x="16" y="11" width="88" height="48" rx="2" fill="#0a0000"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#150000"/><rect x="24" y="20" width="72" height="4" rx="1" fill="#ff0000" opacity="0.4"/><text x="60" y="48" text-anchor="middle" fill="#ff0000" font-size="8" font-weight="bold" opacity="0.7">GAMING</text><rect x="0" y="65" width="120" height="7" rx="2" fill="#1a0000" stroke="#ff0000" stroke-width="1"/></svg>`,
   macbook:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="8" fill="#c0c0c0" stroke="#999" stroke-width="1"/><rect x="16" y="11" width="88" height="48" rx="3" fill="#1c1c1e"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#000"/><text x="60" y="38" text-anchor="middle" fill="#555" font-size="18">🍎</text><rect x="0" y="65" width="120" height="7" rx="3" fill="#b0b0b0" stroke="#999" stroke-width="1"/></svg>`,
@@ -148,14 +139,81 @@ const svgs={
   band:`<svg viewBox="0 0 60 90" width="45" height="68"><rect x="22" y="0" width="16" height="20" rx="4" fill="#222"/><rect x="22" y="70" width="16" height="20" rx="4" fill="#222"/><rect x="12" y="22" width="36" height="46" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/><rect x="17" y="27" width="26" height="36" rx="5" fill="#000"/><text x="30" y="40" text-anchor="middle" fill="#3ea6ff" font-size="6">12:00</text><rect x="19" y="43" width="22" height="2" rx="1" fill="#3ea6ff" opacity="0.6"/></svg>`
 };
 
-const deviceSvg={"samsung-a16":svgs.samsung,"samsung-a56":svgs.samsung,"iphone-15":svgs.iphone,"redmi-note-14":svgs.xiaomi,"xiaomi-15t":svgs.xiaomi,"lenovo-ideapad":svgs.laptop,"lenovo-legion":svgs.gaming_laptop,"asus-rog":svgs.gaming_laptop,"hp-probook":svgs.laptop,"macbook-m2":svgs.macbook,"apple-watch-10":svgs.apple_watch,"apple-watch-se":svgs.apple_watch,"samsung-watch-7":svgs.watch_round,"xiaomi-band-9":svgs.band,"amazfit-gtr":svgs.watch_round};
+const deviceSvg={
+  "samsung-a16":svgs.samsung,"samsung-a56":svgs.samsung,"samsung-a36":svgs.samsung,"samsung-a26":svgs.samsung,
+  "iphone-15":svgs.iphone,"iphone-16":svgs.iphone,"iphone-16-pro":svgs.iphone,
+  "redmi-note-14":svgs.xiaomi,"xiaomi-15t":svgs.xiaomi,"xiaomi-15":svgs.xiaomi,"poco-x7-pro":svgs.poco,
+  "lenovo-ideapad":svgs.laptop,"lenovo-slim5":svgs.laptop,"lenovo-legion":svgs.gaming_laptop,
+  "asus-rog":svgs.gaming_laptop,"asus-vivobook":svgs.laptop,"hp-probook":svgs.laptop,"macbook-m2":svgs.macbook,
+  "apple-watch-10":svgs.apple_watch,"apple-watch-se":svgs.apple_watch,
+  "samsung-watch-7":svgs.watch_round,"xiaomi-band-9":svgs.band,"amazfit-gtr":svgs.watch_round,
+  "huawei-band-9":svgs.band,"xiaomi-band-8":svgs.band
+};
 
-const specs={"samsung-a16":[["📺","6.7\" AMOLED, 90Hz"],["⚡","Helio G99"],["📷","50MP + 5MP"],["🔋","5000mAh, 25W"],["💧","IP54"]],"samsung-a56":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1580"],["📷","50MP + 12MP"],["🔋","5000mAh, 45W"],["💧","IP67"]],"iphone-15":[["📺","6.1\" Retina XDR"],["⚡","A16 Bionic"],["📷","48MP + 12MP"],["🔋","3349mAh"],["💧","IP68"]],"redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G100 Ultra"],["📷","200MP"],["🔋","5500mAh, 120W"],["💧","IP54"]],"xiaomi-15t":[["📺","6.83\" AMOLED, 144Hz"],["⚡","Dimensity 8400"],["📷","50MP Leica"],["🔋","5500mAh, 67W"],["💧","IP68"]],"lenovo-ideapad":[["📺","15.6\" FHD IPS"],["⚡","i5-13420H"],["💾","8GB + 512GB SSD"],["🔋","8-10 soat"],["⚖️","1.62kg"]],"lenovo-legion":[["📺","16\" OLED, 240Hz"],["⚡","i9-14900HX"],["🎮","RTX 5070 8GB"],["💾","16GB + 1TB"],["🔋","80Wh"]],"asus-rog":[["📺","16\" WUXGA, 165Hz"],["⚡","i7-13650HX"],["🎮","RTX 4050 6GB"],["💾","16GB DDR5"],["🔋","90Wh"]],"hp-probook":[["📺","15.6\" FHD IPS"],["⚡","i5-1335U"],["💾","8GB + 512GB"],["🔋","9-11 soat"],["🔒","TPM 2.0"]],"macbook-m2":[["📺","13.3\" Retina"],["⚡","Apple M2"],["💾","8GB + 256GB"],["🔋","18-22 soat"],["⚖️","1.4kg"]],"apple-watch-10":[["📺","LTPO OLED"],["💓","ECG, SpO2"],["🔋","18 soat"],["💧","50m suv"],["⚡","S10 chip"]],"apple-watch-se":[["📺","Retina OLED"],["💓","Yurak, SpO2"],["🔋","18 soat"],["💧","50m suv"],["⚡","S8 chip"]],"samsung-watch-7":[["📺","Super AMOLED"],["💓","ECG, Qon shakari"],["🔋","40 soat"],["💧","IP68, 5ATM"],["⚡","Exynos W1000"]],"xiaomi-band-9":[["📺","1.62\" AMOLED"],["💓","Yurak, SpO2"],["🏃","150+ sport"],["🔋","21 kun"],["💧","5ATM"]],"amazfit-gtr":[["📺","1.28\" AMOLED"],["📍","GPS"],["🏃","120+ sport"],["🔋","20 kun"],["💧","5ATM"]]};
+const specs={
+  "samsung-a16":[["📺","6.7\" AMOLED, 90Hz"],["⚡","Helio G99"],["📷","50MP + 5MP"],["🔋","5000mAh, 25W"],["💧","IP54"]],
+  "samsung-a56":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1580"],["📷","50MP + 12MP"],["🔋","5000mAh, 45W"],["💧","IP67"]],
+  "samsung-a36":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Snapdragon 6 Gen 3"],["📷","50MP + 12MP"],["🔋","5000mAh, 45W"],["💧","IP67"]],
+  "samsung-a26":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1380"],["📷","50MP + 8MP"],["🔋","5000mAh, 25W"],["💧","IP67"]],
+  "iphone-15":[["📺","6.1\" Retina XDR"],["⚡","A16 Bionic"],["📷","48MP + 12MP"],["🔋","3349mAh"],["💧","IP68"]],
+  "iphone-16":[["📺","6.1\" OLED, 60Hz"],["⚡","A18 chip"],["📷","48MP + 12MP"],["🔋","3561mAh"],["💧","IP68"]],
+  "iphone-16-pro":[["📺","6.3\" ProMotion 120Hz"],["⚡","A18 Pro chip"],["📷","48MP Fusion + 12MP"],["🔋","3582mAh"],["💧","IP68"]],
+  "redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G100 Ultra"],["📷","200MP"],["🔋","5500mAh, 120W"],["💧","IP54"]],
+  "xiaomi-15t":[["📺","6.83\" AMOLED, 144Hz"],["⚡","Dimensity 8400"],["📷","50MP Leica"],["🔋","5500mAh, 67W"],["💧","IP68"]],
+  "xiaomi-15":[["📺","6.36\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Elite"],["📷","50MP Leica"],["🔋","5400mAh, 90W"],["💧","IP68"]],
+  "poco-x7-pro":[["📺","6.67\" AMOLED, 144Hz"],["⚡","Snapdragon 7+ Gen 2"],["📷","50MP + 8MP"],["🔋","6550mAh, 90W"],["💧","IP64"]],
+  "lenovo-ideapad":[["📺","15.6\" FHD IPS"],["⚡","i5-13420H"],["💾","8GB + 512GB SSD"],["🔋","8-10 soat"],["⚖️","1.62kg"]],
+  "lenovo-slim5":[["📺","14\" 2.8K OLED, 90Hz"],["⚡","Intel Core Ultra 5"],["💾","16GB + 512GB SSD"],["🔋","10-12 soat"],["⚖️","1.46kg"]],
+  "lenovo-legion":[["📺","16\" OLED, 240Hz"],["⚡","i9-14900HX"],["🎮","RTX 5070 8GB"],["💾","16GB + 1TB"],["🔋","80Wh"]],
+  "asus-rog":[["📺","16\" WUXGA, 165Hz"],["⚡","i7-13650HX"],["🎮","RTX 4050 6GB"],["💾","16GB DDR5"],["🔋","90Wh"]],
+  "asus-vivobook":[["📺","15.6\" FHD OLED"],["⚡","AMD Ryzen 5 7530U"],["💾","8GB + 512GB SSD"],["🔋","8-10 soat"],["⚖️","1.7kg"]],
+  "hp-probook":[["📺","15.6\" FHD IPS"],["⚡","i5-1335U"],["💾","8GB + 512GB"],["🔋","9-11 soat"],["🔒","TPM 2.0"]],
+  "macbook-m2":[["📺","13.3\" Retina"],["⚡","Apple M2"],["💾","8GB + 256GB"],["🔋","18-22 soat"],["⚖️","1.4kg"]],
+  "apple-watch-10":[["📺","LTPO OLED"],["💓","ECG, SpO2"],["🔋","18 soat"],["💧","50m suv"],["⚡","S10 chip"]],
+  "apple-watch-se":[["📺","Retina OLED"],["💓","Yurak, SpO2"],["🔋","18 soat"],["💧","50m suv"],["⚡","S8 chip"]],
+  "samsung-watch-7":[["📺","Super AMOLED"],["💓","ECG, Qon shakari"],["🔋","40 soat"],["💧","IP68, 5ATM"],["⚡","Exynos W1000"]],
+  "xiaomi-band-9":[["📺","1.62\" AMOLED"],["💓","Yurak, SpO2"],["🏃","150+ sport"],["🔋","21 kun"],["💧","5ATM"]],
+  "amazfit-gtr":[["📺","1.28\" AMOLED"],["📍","GPS"],["🏃","120+ sport"],["🔋","20 kun"],["💧","5ATM"]],
+  "huawei-band-9":[["📺","1.47\" AMOLED"],["💓","Yurak, SpO2"],["🏃","100+ sport"],["🔋","14 kun"],["💧","5ATM"]],
+  "xiaomi-band-8":[["📺","1.62\" AMOLED"],["💓","Yurak, SpO2"],["🏃","150+ sport"],["🔋","16 kun"],["💧","5ATM"]]
+};
 
-const data={phones:[{id:"samsung-a16",name:"Samsung Galaxy A16",badge:"ANDROID",prices:{uzum:"2,039,000",olcha:"2,131,900",texnomart:"2,550,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-samsung-galaxy-1352827",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a16",texnomart:"https://texnomart.uz/uz/product/detail/357963/"}},{id:"samsung-a56",name:"Samsung Galaxy A56 5G",badge:"5G",prices:{uzum:"6,500,000",olcha:"10,100,000",texnomart:"5,360,000"},links:{uzum:"https://uzum.uz/ru/product/smartfon-samsung-galaxy-1602716",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a56-5g",texnomart:"https://texnomart.uz/ru/product/detail/358327/"}},{id:"iphone-15",name:"iPhone 15",badge:"PREMIUM",prices:{uzum:"15,135,000",olcha:"15,135,000",texnomart:"14,230,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",olcha:"https://olcha.uz/oz/product/view/apple-iphone-15",texnomart:"https://texnomart.uz/ru/product/detail/356314/"}},{id:"redmi-note-14",name:"Redmi Note 14 Pro",badge:"200MP",prices:{uzum:"3,997,120",olcha:"4,360,000",texnomart:"4,285,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1466128",olcha:"https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",texnomart:"https://texnomart.uz/ru/product/detail/358105/"}},{id:"xiaomi-15t",name:"Xiaomi 15T",badge:"LEICA",prices:{uzum:"9,150,000",olcha:"9,267,993",texnomart:null},links:{uzum:"https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",olcha:"https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",texnomart:null}}],laptops:[{id:"lenovo-ideapad",name:"Lenovo IdeaPad Slim 3",badge:"O'QISH",prices:{uzum:"7,247,000",olcha:"5,500,000",texnomart:"3,990,000"},links:{uzum:"https://uzum.uz/ru/product/noutbuk-lenovo-ideapad-slim-3-16iru8-1102591",olcha:"https://olcha.uz/oz/product/view/noutbuk-lenovo-ideapad-slim-3-i5-13420h-8512-gb-156",texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/"}},{id:"lenovo-legion",name:"Lenovo Legion 5",badge:"GAMING",prices:{uzum:null,olcha:null,texnomart:"18,647,000"},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/"}},{id:"asus-rog",name:"ASUS ROG Strix G16",badge:"GAMING",prices:{uzum:null,olcha:null,texnomart:"14,000,000"},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-asus/"}},{id:"hp-probook",name:"HP ProBook 450 G10",badge:"BIZNES",prices:{uzum:null,olcha:null,texnomart:"6,890,000"},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-hp/"}},{id:"macbook-m2",name:"Apple MacBook Pro M2",badge:"PREMIUM",prices:{uzum:"20,832,000",olcha:null,texnomart:null},links:{uzum:"https://uzum.uz/uz/search?query=macbook+pro+m2",olcha:null,texnomart:null}}],watches:[{id:"apple-watch-10",name:"Apple Watch Series 10",badge:"PREMIUM",prices:{uzum:"5,000,000",olcha:null,texnomart:null},links:{uzum:"https://uzum.uz/ru/product/chasy-apple-watch-series-10-4246-1511581",olcha:null,texnomart:null}},{id:"apple-watch-se",name:"Apple Watch SE",badge:"APPLE",prices:{uzum:null,olcha:null,texnomart:null},links:{uzum:null,olcha:null,texnomart:null}},{id:"samsung-watch-7",name:"Samsung Galaxy Watch 7",badge:"ANDROID",prices:{uzum:"3,399,000",olcha:"3,399,000",texnomart:"3,099,000"},links:{uzum:"https://uzum.uz/uz/search?query=samsung+galaxy+watch+7",olcha:"https://olcha.uz/oz/search?q=samsung+galaxy+watch+7",texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+watch+7"}},{id:"xiaomi-band-9",name:"Xiaomi Smart Band 9",badge:"ARZON",prices:{uzum:"450,000",olcha:"450,000",texnomart:"450,000"},links:{uzum:"https://uzum.uz/uz/search?query=xiaomi+smart+band+9",olcha:"https://olcha.uz/oz/search?q=xiaomi+smart+band+9",texnomart:"https://texnomart.uz/uz/search/?q=xiaomi+smart+band+9"}},{id:"amazfit-gtr",name:"Amazfit GTR Mini",badge:"SPORT",prices:{uzum:null,olcha:null,texnomart:null},links:{uzum:null,olcha:null,texnomart:null}}]};
+const data={
+  phones:[
+    {id:"samsung-a16",name:"Samsung Galaxy A16",badge:"ANDROID",prices:{uzum:"2,039,000",olcha:"2,131,900",texnomart:"2,550,000",mediapark:"2,199,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-samsung-galaxy-1352827",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a16",texnomart:"https://texnomart.uz/uz/product/detail/357963/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+a16"}},
+    {id:"samsung-a26",name:"Samsung Galaxy A26",badge:"YANGI",prices:{uzum:"3,000,000",olcha:"3,100,000",texnomart:"3,200,000",mediapark:"3,050,000"},links:{uzum:"https://uzum.uz/uz/search?query=samsung+galaxy+a26",olcha:"https://olcha.uz/oz/search?q=samsung+galaxy+a26",texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+a26",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+a26"}},
+    {id:"samsung-a36",name:"Samsung Galaxy A36",badge:"YANGI",prices:{uzum:"4,000,000",olcha:"4,100,000",texnomart:"4,200,000",mediapark:"4,050,000"},links:{uzum:"https://uzum.uz/uz/search?query=samsung+galaxy+a36",olcha:"https://olcha.uz/oz/search?q=samsung+galaxy+a36",texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+a36",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+a36"}},
+    {id:"samsung-a56",name:"Samsung Galaxy A56 5G",badge:"5G",prices:{uzum:"6,500,000",olcha:"10,100,000",texnomart:"5,360,000",mediapark:"5,900,000"},links:{uzum:"https://uzum.uz/ru/product/smartfon-samsung-galaxy-1602716",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a56-5g",texnomart:"https://texnomart.uz/ru/product/detail/358327/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+a56"}},
+    {id:"iphone-15",name:"iPhone 15",badge:"PREMIUM",prices:{uzum:"15,135,000",olcha:"15,135,000",texnomart:"14,230,000",mediapark:"14,900,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",olcha:"https://olcha.uz/oz/product/view/apple-iphone-15",texnomart:"https://texnomart.uz/ru/product/detail/356314/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=iphone+15"}},
+    {id:"iphone-16",name:"iPhone 16",badge:"YANGI",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"iphone-16-pro",name:"iPhone 16 Pro",badge:"PRO",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"redmi-note-14",name:"Redmi Note 14 Pro",badge:"200MP",prices:{uzum:"3,997,120",olcha:"4,360,000",texnomart:"4,285,000",mediapark:"4,100,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1466128",olcha:"https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",texnomart:"https://texnomart.uz/ru/product/detail/358105/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=redmi+note+14+pro"}},
+    {id:"xiaomi-15t",name:"Xiaomi 15T",badge:"LEICA",prices:{uzum:"9,150,000",olcha:"9,267,993",texnomart:null,mediapark:"9,000,000"},links:{uzum:"https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",olcha:"https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=xiaomi+15t"}},
+    {id:"xiaomi-15",name:"Xiaomi 15",badge:"FLAGMAN",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"poco-x7-pro",name:"Poco X7 Pro",badge:"6550mAh",prices:{uzum:"4,500,000",olcha:"4,600,000",texnomart:null,mediapark:"4,550,000"},links:{uzum:"https://uzum.uz/uz/search?query=poco+x7+pro",olcha:"https://olcha.uz/oz/search?q=poco+x7+pro",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=poco+x7+pro"}}
+  ],
+  laptops:[
+    {id:"lenovo-ideapad",name:"Lenovo IdeaPad Slim 3",badge:"O'QISH",prices:{uzum:"7,247,000",olcha:"5,500,000",texnomart:"3,990,000",mediapark:"5,200,000"},links:{uzum:"https://uzum.uz/ru/product/noutbuk-lenovo-ideapad-slim-3-16iru8-1102591",olcha:"https://olcha.uz/oz/product/view/noutbuk-lenovo-ideapad-slim-3-i5-13420h-8512-gb-156",texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/",mediapark:"https://mediapark.uz/uz/products/category/noutbuk-va-ultrabuklar-22/noutbuklar-313?search=lenovo+ideapad+slim+3"}},
+    {id:"lenovo-slim5",name:"Lenovo IdeaPad Slim 5",badge:"OLED",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"lenovo-legion",name:"Lenovo Legion 5",badge:"GAMING",prices:{uzum:null,olcha:null,texnomart:"18,647,000",mediapark:null},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/",mediapark:null}},
+    {id:"asus-rog",name:"ASUS ROG Strix G16",badge:"GAMING",prices:{uzum:null,olcha:null,texnomart:"14,000,000",mediapark:null},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-asus/",mediapark:null}},
+    {id:"asus-vivobook",name:"ASUS Vivobook 15 OLED",badge:"OLED",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"hp-probook",name:"HP ProBook 450 G10",badge:"BIZNES",prices:{uzum:null,olcha:null,texnomart:"6,890,000",mediapark:null},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/katalog/noutbuki-hp/",mediapark:null}},
+    {id:"macbook-m2",name:"Apple MacBook Pro M2",badge:"PREMIUM",prices:{uzum:"20,832,000",olcha:null,texnomart:null,mediapark:null},links:{uzum:"https://uzum.uz/uz/search?query=macbook+pro+m2",olcha:null,texnomart:null,mediapark:null}}
+  ],
+  watches:[
+    {id:"apple-watch-10",name:"Apple Watch Series 10",badge:"PREMIUM",prices:{uzum:"5,000,000",olcha:null,texnomart:null,mediapark:null},links:{uzum:"https://uzum.uz/ru/product/chasy-apple-watch-series-10-4246-1511581",olcha:null,texnomart:null,mediapark:null}},
+    {id:"apple-watch-se",name:"Apple Watch SE",badge:"APPLE",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"samsung-watch-7",name:"Samsung Galaxy Watch 7",badge:"ANDROID",prices:{uzum:"3,399,000",olcha:"3,399,000",texnomart:"3,099,000",mediapark:"3,299,000"},links:{uzum:"https://uzum.uz/uz/search?query=samsung+galaxy+watch+7",olcha:"https://olcha.uz/oz/search?q=samsung+galaxy+watch+7",texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+watch+7",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+galaxy+watch+7"}},
+    {id:"xiaomi-band-9",name:"Xiaomi Smart Band 9",badge:"ARZON",prices:{uzum:"450,000",olcha:"450,000",texnomart:"450,000",mediapark:"460,000"},links:{uzum:"https://uzum.uz/uz/search?query=xiaomi+smart+band+9",olcha:"https://olcha.uz/oz/search?q=xiaomi+smart+band+9",texnomart:"https://texnomart.uz/uz/search/?q=xiaomi+smart+band+9",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=xiaomi+smart+band+9"}},
+    {id:"xiaomi-band-8",name:"Xiaomi Smart Band 8",badge:"SPORT",prices:{uzum:"380,000",olcha:"390,000",texnomart:null,mediapark:"385,000"},links:{uzum:"https://uzum.uz/uz/search?query=xiaomi+smart+band+8",olcha:"https://olcha.uz/oz/search?q=xiaomi+smart+band+8",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=xiaomi+smart+band+8"}},
+    {id:"amazfit-gtr",name:"Amazfit GTR Mini",badge:"GPS",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}},
+    {id:"huawei-band-9",name:"Huawei Band 9",badge:"14 KUN",prices:{uzum:null,olcha:null,texnomart:null,mediapark:null},links:{uzum:null,olcha:null,texnomart:null,mediapark:null}}
+  ]
+};
 
-const mktNames={uzum:"Uzumdan sotib olish",olcha:"Olchadan sotib olish",texnomart:"Texnomartdan sotib olish"};
-const mktLogos={uzum:"https://texnobop.github.io/images/logos/uzum-logo.png",olcha:"https://texnobop.github.io/images/logos/olcha-logo.png",texnomart:"https://texnobop.github.io/images/logos/texnomart-logo.png"};
+const mktNames={uzum:"Uzumdan sotib olish",olcha:"Olchadan sotib olish",texnomart:"Texnomartdan sotib olish",mediapark:"Mediaparkdan sotib olish"};
+const mktLogos={uzum:"https://texnobop.github.io/images/logos/uzum-logo.png",olcha:"https://texnobop.github.io/images/logos/olcha-logo.png",texnomart:"https://texnobop.github.io/images/logos/texnomart-logo.png",mediapark:"https://texnobop.github.io/images/logos/mediapark-logo.png"};
 const catLabels={phones:"📱 Telefonlar",laptops:"💻 Noutbuklar",watches:"⌚ Smart Soatlar"};
 let curMarket="uzum",curCat="phones";
 
@@ -163,10 +221,8 @@ function selectM(m,el){
   document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   curMarket=m;
-  const catWrap=document.getElementById('cat-wrap');
-  const divider1=document.getElementById('divider1');
-  catWrap.style.display='block';
-  divider1.style.display='flex';
+  document.getElementById('cat-wrap').style.display='block';
+  document.getElementById('divider1').style.display='flex';
   document.getElementById('products-wrap').style.display='none';
   document.getElementById('divider2').style.display='none';
   document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
@@ -177,10 +233,8 @@ function selectC(c,el){
   el.classList.add('active');
   curCat=c;
   document.getElementById('prod-label').textContent='03 — '+catLabels[c];
-  const pw=document.getElementById('products-wrap');
-  const d2=document.getElementById('divider2');
-  pw.style.display='block';
-  d2.style.display='flex';
+  document.getElementById('products-wrap').style.display='block';
+  document.getElementById('divider2').style.display='flex';
   render();
 }
 
@@ -191,7 +245,7 @@ function render(){
     const price=p.prices[curMarket];
     const link=p.links[curMarket];
     const isSoon=!price||!link;
-    const searchUrl=`https://${curMarket}.uz/uz/search?query=${encodeURIComponent(p.name)}`;
+    const searchUrl=`https://${curMarket==='mediapark'?'mediapark':curMarket}.uz/uz/search?query=${encodeURIComponent(p.name)}`;
     const specRows=(specs[p.id]||[]).map(s=>`<div class="spec-row"><span class="spec-icon">${s[0]}</span><span>${s[1]}</span></div>`).join('');
     grid.innerHTML+=`
     <div class="card" style="animation-delay:${i*0.07}s">
