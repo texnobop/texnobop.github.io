@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="4VX_5H0UaFmcLGyicvqbabkZtGNfpsfA4QRg2B3jCxk" />
 <meta name="description" content="O'zbekistonda eng yaxshi telefonlar, noutbuklar va smart soatlarni Uzum, Olcha, Texnomart va Mediapark narxlari bilan taqqoslang!">
-<meta name="keywords" content="telefon narxi uzbekistan, noutbuk narxi, smart soat, uzum telefon, olcha noutbuk, texnomart, mediapark, samsung narxi, iphone narxi uzbekistan, redmi note 14, honor x9c, samsung s25">
+<meta name="keywords" content="telefon narxi uzbekistan, noutbuk narxi, smart soat, uzum telefon, olcha noutbuk, texnomart, mediapark, samsung narxi, iphone narxi uzbekistan">
 <meta name="author" content="Texnobop">
 <meta property="og:title" content="Texnobop - O'zbekistonda eng yaxshi texnologiyalar">
 <meta property="og:description" content="Telefonlar, noutbuklar va smart soatlarni eng arzon narxda toping!">
@@ -23,8 +23,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-height:100vh}
-.header{background:#0f0f0f;padding:20px;text-align:center;border-bottom:1px solid #272727}
-.logo{font-size:28px;font-weight:bold;color:#fff;letter-spacing:2px}
+.header{background:#0f0f0f;padding:16px 20px;text-align:center;border-bottom:1px solid #272727}
+.logo{font-size:26px;font-weight:bold;color:#fff;letter-spacing:2px}
 .logo span{color:#3ea6ff}
 .tagline{font-size:11px;color:#aaa;margin-top:4px;letter-spacing:1px}
 .step-wrap{max-width:900px;margin:0 auto;padding:30px 20px}
@@ -50,6 +50,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .cat-btn.active{border-color:#3ea6ff;background:linear-gradient(135deg,#0d2137,#0a1a2e);color:#3ea6ff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(62,166,255,0.15)}
 .cat-icon{font-size:28px}
 .cat-name{font-size:12px}
+.brand-links{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;justify-content:center}
+.brand-link{font-size:10px;padding:3px 8px;border-radius:10px;text-decoration:none;color:#fff}
 .products-wrap{display:none;animation:fadeUp 0.4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .products-section{max-width:1100px;margin:0 auto;padding:0 20px 40px}
@@ -69,6 +71,42 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .card-btn img{width:18px;height:18px;object-fit:contain;border-radius:4px}
 .empty{text-align:center;color:#555;padding:40px;grid-column:1/-1;font-size:14px}
 footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24px;font-size:11px;color:#444;margin-top:10px}
+
+@media(max-width:768px){
+  .market-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cat-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .step-wrap{padding:20px 12px}
+  .logo{font-size:22px}
+  .mkt-btn{padding:14px 8px}
+  .mkt-btn img{width:38px;height:38px}
+  .mkt-btn span{font-size:11px}
+  .cat-btn{padding:14px 8px}
+  .cat-icon{font-size:24px}
+  .card-thumb{height:130px}
+  .card-body{padding:10px}
+}
+@media(max-width:480px){
+  .market-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .cat-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .step-wrap{padding:14px 10px}
+  .logo{font-size:20px}
+  .tagline{font-size:9px}
+  .mkt-btn{padding:12px 6px;border-radius:12px}
+  .mkt-btn img{width:32px;height:32px}
+  .mkt-btn span{font-size:10px}
+  .cat-btn{padding:12px 6px;border-radius:10px}
+  .cat-icon{font-size:20px}
+  .cat-name{font-size:10px}
+  .card-thumb{height:110px}
+  .card-badge{font-size:8px;padding:2px 6px}
+  .card-price-tag{font-size:8px;padding:2px 6px}
+  .card-name{font-size:11px}
+  .card-btn{font-size:10px;padding:8px}
+  .step-label{font-size:9px;letter-spacing:1px}
+  .divider-icon{font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -109,15 +147,15 @@ footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24
     <div class="step-label">02 — Kategoriyani tanlang</div>
     <div class="cat-grid">
       <div class="cat-btn" onclick="selectC('phones',this)">
-  <div class="cat-icon">📱</div>
-  <div class="cat-name">Telefonlar</div>
-  <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;justify-content:center">
-    <a href="https://texnobop.github.io/samsung.html" onclick="event.stopPropagation()" style="font-size:10px;background:#1428a0;color:#fff;padding:3px 8px;border-radius:10px;text-decoration:none">Samsung</a>
-    <a href="https://texnobop.github.io/iphone.html" onclick="event.stopPropagation()" style="font-size:10px;background:#3a3a3c;color:#fff;padding:3px 8px;border-radius:10px;text-decoration:none">iPhone</a>
-    <a href="https://texnobop.github.io/xiaomi.html" onclick="event.stopPropagation()" style="font-size:10px;background:#ff6900;color:#fff;padding:3px 8px;border-radius:10px;text-decoration:none">Xiaomi</a>
-    <a href="https://texnobop.github.io/honor.html" onclick="event.stopPropagation()" style="font-size:10px;background:#c00000;color:#fff;padding:3px 8px;border-radius:10px;text-decoration:none">Honor</a>
-  </div>
-</div>
+        <div class="cat-icon">📱</div>
+        <div class="cat-name">Telefonlar</div>
+        <div class="brand-links">
+          <a href="https://texnobop.github.io/samsung.html" onclick="event.stopPropagation()" class="brand-link" style="background:#1428a0">Samsung</a>
+          <a href="https://texnobop.github.io/iphone.html" onclick="event.stopPropagation()" class="brand-link" style="background:#3a3a3c">iPhone</a>
+          <a href="https://texnobop.github.io/xiaomi.html" onclick="event.stopPropagation()" class="brand-link" style="background:#ff6900">Xiaomi</a>
+          <a href="https://texnobop.github.io/honor.html" onclick="event.stopPropagation()" class="brand-link" style="background:#c00000">Honor</a>
+        </div>
+      </div>
       <div class="cat-btn" onclick="selectC('laptops',this)">
         <div class="cat-icon">💻</div>
         <div class="cat-name">Noutbuklar</div>
