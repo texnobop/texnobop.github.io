@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Xiaomi telefonlarining O'zbekistondagi narxlari. Xiaomi 15T, Redmi Note 14, Poco X7 Pro modellar narxlarini Uzum, Olcha, Texnomart va Mediaparkda taqqoslang!">
+<meta name="keywords" content="xiaomi narxi uzbekistan, redmi note 14 narxi, xiaomi 15t narxi, poco x7 pro narxi, xiaomi uzum, xiaomi olcha, xiaomi texnomart, xiaomi mediapark">
+<meta property="og:title" content="Xiaomi telefonlari narxi O'zbekistonda - Texnobop">
+<meta property="og:description" content="Xiaomi modellarining eng arzon narxlarini toping!">
+<meta property="og:url" content="https://texnobop.github.io/xiaomi.html">
+<title>Xiaomi Telefonlari Narxi O'zbekistonda | Texnobop</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-height:100vh}
+.header{background:#0f0f0f;padding:16px 20px;border-bottom:1px solid #272727;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:bold;color:#fff;text-decoration:none}
+.logo span{color:#3ea6ff}
+.back{color:#3ea6ff;text-decoration:none;font-size:13px}
+.hero{position:relative;background:#000;padding:80px 20px;text-align:center;overflow:hidden;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:0}
+.hero-video iframe{position:absolute;top:50%;left:50%;width:300%;height:300%;transform:translate(-50%,-50%);pointer-events:none;opacity:0.35}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.7));z-index:1}
+.hero-content{position:relative;z-index:2}
+.brand-logo{font-size:52px;margin-bottom:14px}
+.hero h1{font-size:26px;font-weight:bold;color:#fff;margin-bottom:10px;text-shadow:0 2px 20px rgba(0,0,0,0.8)}
+.hero p{font-size:14px;color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto;line-height:1.6}
+.stats{display:flex;justify-content:center;gap:30px;margin-top:24px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:24px;font-weight:bold;color:#ff6900}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
+.section{max-width:1100px;margin:0 auto;padding:30px 20px}
+.section-title{font-size:16px;font-weight:bold;color:#fff;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #272727}
+.market-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tab{padding:8px 18px;border-radius:20px;font-size:12px;font-weight:bold;border:1px solid #303030;background:#1a1a1a;color:#888;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px}
+.tab img{width:20px;height:20px;object-fit:contain;border-radius:4px}
+.tab:hover{border-color:#ff6900;color:#fff}
+.tab.active{background:#ff6900;color:#fff;border-color:#ff6900}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.card{background:#1a1a1a;border-radius:14px;overflow:hidden;border:1px solid #272727;transition:all 0.3s;display:flex;flex-direction:column;animation:cardIn 0.4s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.card:hover{transform:translateY(-5px);border-color:#ff6900;box-shadow:0 10px 30px rgba(255,105,0,0.1)}
+.card-thumb{height:150px;display:flex;align-items:center;justify-content:center;background:#222;position:relative}
+.card-badge{position:absolute;top:8px;left:8px;background:#ff6900;color:#fff;font-size:9px;font-weight:bold;padding:3px 10px;border-radius:20px}
+.card-price-tag{position:absolute;bottom:8px;right:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:bold;padding:3px 10px;border-radius:20px}
+.card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card-name{font-size:13px;font-weight:bold;color:#fff;line-height:1.4}
+.spec-row{display:flex;align-items:center;gap:6px;font-size:10px;color:#888}
+.spec-icon{font-size:11px;width:16px;text-align:center}
+.card-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#cc5500,#ff6900);color:#fff;padding:10px;border-radius:10px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.3s}
+.card-btn:hover{background:linear-gradient(135deg,#ff6900,#ff8c00);transform:scale(1.02)}
+.card-btn img{width:18px;height:18px;object-fit:contain;border-radius:4px}
+.article{background:#1a1a1a;border-radius:14px;padding:24px;margin-top:30px;border:1px solid #272727}
+.article h2{font-size:18px;font-weight:bold;color:#fff;margin-bottom:16px}
+.article p{font-size:14px;color:#aaa;line-height:1.8;margin-bottom:12px}
+.article h3{font-size:15px;font-weight:bold;color:#ff6900;margin:16px 0 8px}
+.empty{text-align:center;color:#555;padding:40px;grid-column:1/-1}
+footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24px;font-size:11px;color:#444;margin-top:40px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="https://texnobop.github.io" class="logo">techno<span>bop</span></a>
+  <a href="https://texnobop.github.io" class="back">← Bosh sahifa</a>
+</div>
+
+<div class="hero">
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/YaAhIareepg?autoplay=1&mute=1&loop=1&playlist=YaAhIareepg&controls=0&showinfo=0&rel=0&disablekb=1" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="brand-logo">📱</div>
+    <h1>Xiaomi Telefonlari Narxi O'zbekistonda</h1>
+    <p>Xiaomi 15T, Redmi Note 14 va Poco X7 Pro modellarini O'zbekistondagi eng yaxshi narxlarda toping. Uzum, Olcha, Texnomart va Mediapark narxlarini taqqoslang!</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Model</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Market</div></div>
+      <div class="stat"><div class="stat-num">2025</div><div class="stat-label">Yangilangan</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Marketni tanlang</div>
+  <div class="market-tabs">
+    <div class="tab active" onclick="selectM('uzum',this)">
+      <img src="https://texnobop.github.io/images/logos/uzum-logo.png" onerror="this.style.display='none'">
+      Uzum Market
+    </div>
+    <div class="tab" onclick="selectM('olcha',this)">
+      <img src="https://texnobop.github.io/images/logos/olcha-logo.png" onerror="this.style.display='none'">
+      Olcha
+    </div>
+    <div class="tab" onclick="selectM('texnomart',this)">
+      <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" onerror="this.style.display='none'">
+      Texnomart
+    </div>
+    <div class="tab" onclick="selectM('mediapark',this)">
+      <img src="https://texnobop.github.io/images/logos/mediapark-logo.png" onerror="this.style.display='none'">
+      Mediapark
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <div class="article">
+    <h2>Xiaomi telefonlari haqida</h2>
+    <p>Xiaomi — dunyoning eng tez rivojlanayotgan smartfon brendlaridan biri. O'zbekistonda Redmi, Poco va Xiaomi seriyalari keng tarqalgan. Arzon narx va yuqori sifat — Xiaomi ning asosiy ustunligi.</p>
+    <h3>Redmi Note seriyasi</h3>
+    <p>Redmi Note — Xiaomi ning eng mashhur o'rta narxli seriyasi. Note 14 va Note 15 modellari 200MP kamera, katta batareya va tez zaryadlash bilan jihozlangan.</p>
+    <h3>Xiaomi 15T</h3>
+    <p>Xiaomi 15T — Leica kamerasi va Dimensity 8400 protsessori bilan jihozlangan flagman darajasidagi telefon. IP68 himoya va 144Hz ekran bilan ajralib turadi.</p>
+    <h3>Poco seriyasi</h3>
+    <p>Poco X7 Pro — gaming uchun mo'ljallangan telefon. 6550mAh katta batareya va 90W tez zaryadlash bilan uzoq vaqt ishlatish mumkin.</p>
+    <h3>O'zbekistonda Xiaomi narxlari</h3>
+    <p>Xiaomi telefonlarini O'zbekistonda Uzum Market, Olcha, Texnomart va Mediapark orqali sotib olish mumkin.</p>
+  </div>
+</div>
+
+<footer>© 2025 Texnobop — Barcha huquqlar himoyalangan | <a href="https://texnobop.github.io" style="color:#ff6900">Bosh sahifa</a></footer>
+
+<script>
+const svg=`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a1a1a" stroke="#ff6900" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#1a0a0a"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#3a1000"/><text x="30" y="33" text-anchor="middle" fill="#ff6900" font-size="10" font-weight="bold">Mi</text><circle cx="30" cy="92" r="4" fill="#333"/></svg>`;
+
+const specs={
+  "redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G99-Ultra"],["📷","108MP + 8MP"],["🔋","5500mAh, 45W"],["💧","IP54"]],
+  "redmi-note-14-5g":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Dimensity 7025 Ultra"],["📷","108MP + 8MP"],["🔋","5500mAh, 45W"],["💧","IP54"]],
+  "redmi-note-14-pro-5g":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Dimensity 7300 Ultra"],["📷","200MP + 8MP"],["🔋","5500mAh, 45W"],["💧","IP66"]],
+  "redmi-note-15-pro":[["📺","6.77\" AMOLED, 144Hz"],["⚡","Dimensity 8300 Ultra"],["📷","200MP + 8MP"],["🔋","5500mAh, 90W"],["💧","IP66"]],
+  "xiaomi-15t":[["📺","6.83\" AMOLED, 144Hz"],["⚡","Dimensity 8400"],["📷","50MP Leica"],["🔋","5500mAh, 67W"],["💧","IP68"]],
+  "poco-x7-pro":[["📺","6.67\" AMOLED, 144Hz"],["⚡","Snapdragon 7+ Gen 2"],["📷","50MP + 8MP"],["🔋","6550mAh, 90W"],["💧","IP64"]]
+};
+
+const phones=[
+  {id:"redmi-note-14",name:"Redmi Note 14",badge:"108MP",prices:{uzum:"2,232,000",olcha:"2,232,000",texnomart:null,mediapark:"2,800,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1436215",olcha:"https://olcha.uz/oz/product/view/redmi-note-14",texnomart:null,mediapark:"https://mediapark.uz/uz/products/view/smartfon-xiaomi-redmi-note-14-8-256gb-28457"}},
+  {id:"redmi-note-14-5g",name:"Redmi Note 14 5G",badge:"5G",prices:{uzum:null,olcha:"2,750,000",texnomart:null,mediapark:null},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/redmi-note-14-5g",texnomart:null,mediapark:null}},
+  {id:"redmi-note-14-pro-5g",name:"Redmi Note 14 Pro 5G",badge:"200MP",prices:{uzum:"3,997,120",olcha:"4,360,000",texnomart:"4,285,000",mediapark:"4,100,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1466128",olcha:"https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",texnomart:"https://texnomart.uz/ru/product/detail/358105/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=redmi+note+14+pro"}},
+  {id:"redmi-note-15-pro",name:"Redmi Note 15 Pro+ 5G",badge:"YANGI",prices:{uzum:null,olcha:"4,849,501",texnomart:null,mediapark:null},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/xiaomi-redmi-note-15-pro-5g",texnomart:null,mediapark:null}},
+  {id:"xiaomi-15t",name:"Xiaomi 15T",badge:"LEICA",prices:{uzum:"9,150,000",olcha:"9,267,993",texnomart:null,mediapark:"9,000,000"},links:{uzum:"https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",olcha:"https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=xiaomi+15t"}},
+  {id:"poco-x7-pro",name:"Poco X7 Pro",badge:"6550mAh",prices:{uzum:"4,500,000",olcha:"4,600,000",texnomart:null,mediapark:"4,550,000"},links:{uzum:"https://uzum.uz/uz/search?query=poco+x7+pro",olcha:"https://olcha.uz/oz/search?q=poco+x7+pro",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=poco+x7+pro"}}
+];
+
+const mktNames={uzum:"Uzumdan sotib olish",olcha:"Olchadan sotib olish",texnomart:"Texnomartdan sotib olish",mediapark:"Mediaparkdan sotib olish"};
+const mktLogos={uzum:"https://texnobop.github.io/images/logos/uzum-logo.png",olcha:"https://texnobop.github.io/images/logos/olcha-logo.png",texnomart:"https://texnobop.github.io/images/logos/texnomart-logo.png",mediapark:"https://texnobop.github.io/images/logos/mediapark-logo.png"};
+let curMarket="uzum";
+
+function selectM(m,el){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  curMarket=m;
+  render();
+}
+
+function render(){
+  const grid=document.getElementById("grid");
+  grid.innerHTML="";
+  const filtered=phones.filter(p=>p.prices[curMarket]&&p.links[curMarket]);
+  if(filtered.length===0){
+    grid.innerHTML=`<div class="empty">Bu marketda hozircha Xiaomi telefon yo'q 😊</div>`;
+    return;
+  }
+  filtered.forEach((p,i)=>{
+    const specRows=(specs[p.id]||[]).map(s=>`<div class="spec-row"><span class="spec-icon">${s[0]}</span><span>${s[1]}</span></div>`).join('');
+    grid.innerHTML+=`
+    <div class="card" style="animation-delay:${i*0.07}s">
+      <div class="card-thumb">
+        ${svg}
+        <span class="card-badge">${p.badge}</span>
+        <span class="card-price-tag">${p.prices[curMarket]} so'm</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div style="display:flex;flex-direction:column;gap:3px">${specRows}</div>
+        <a class="card-btn" href="${p.links[curMarket]}" target="_blank">
+          <img src="${mktLogos[curMarket]}" onerror="this.style.display='none'">
+          ${mktNames[curMarket]} →
+        </a>
+      </div>
+    </div>`;
+  });
+}
+
+render();
+</script>
+</body>
+</html>
