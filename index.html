@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="4VX_5H0UaFmcLGyicvqbabkZtGNfpsfA4QRg2B3jCxk" />
 <meta name="description" content="O'zbekistonda eng yaxshi telefonlar, noutbuklar va smart soatlarni Uzum, Olcha, Texnomart va Mediapark narxlari bilan taqqoslang!">
-<meta name="keywords" content="telefon narxi uzbekistan, noutbuk narxi, smart soat, uzum telefon, olcha noutbuk, texnomart, mediapark, samsung narxi, iphone narxi uzbekistan">
+<meta name="keywords" content="telefon narxi uzbekistan, noutbuk narxi, smart soat, uzum telefon, olcha noutbuk, texnomart, mediapark, samsung narxi, iphone narxi uzbekistan, redmi note 14, honor x9c, samsung s25">
 <meta name="author" content="Texnobop">
 <meta property="og:title" content="Texnobop - O'zbekistonda eng yaxshi texnologiyalar">
 <meta property="og:description" content="Telefonlar, noutbuklar va smart soatlarni eng arzon narxda toping!">
 <meta property="og:url" content="https://texnobop.github.io">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://texnobop.github.io">
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-990J4N434R"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -68,6 +67,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .card-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1a6abf,#3ea6ff);color:#fff;padding:10px;border-radius:10px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.3s}
 .card-btn:hover{background:linear-gradient(135deg,#3ea6ff,#65b8ff);transform:scale(1.02);box-shadow:0 4px 15px rgba(62,166,255,0.3)}
 .card-btn img{width:18px;height:18px;object-fit:contain;border-radius:4px}
+.empty{text-align:center;color:#555;padding:40px;grid-column:1/-1;font-size:14px}
 footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24px;font-size:11px;color:#444;margin-top:10px}
 </style>
 </head>
@@ -144,6 +144,7 @@ const svgs={
   samsung:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="10" fill="#1a1a2e" stroke="#1428a0" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#050515"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#0a1a4a"/><text x="30" y="33" text-anchor="middle" fill="#1428a0" font-size="8" font-weight="bold">SAMSUNG</text><rect x="14" y="44" width="32" height="12" rx="2" fill="#0a0a1a"/><rect x="14" y="59" width="32" height="3" rx="1" fill="#1428a0" opacity="0.5"/><circle cx="30" cy="92" r="4" fill="#1428a0" opacity="0.5"/></svg>`,
   iphone:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="12" fill="#1c1c1e" stroke="#3a3a3c" stroke-width="1.5"/><rect x="18" y="4" width="24" height="5" rx="2.5" fill="#3a3a3c"/><rect x="10" y="12" width="40" height="68" rx="5" fill="#1a1a2e"/><rect x="14" y="18" width="32" height="22" rx="3" fill="#2a4a7a" opacity="0.8"/><rect x="14" y="44" width="32" height="12" rx="2" fill="#1a1a3e"/></svg>`,
   xiaomi:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a1a1a" stroke="#ff6900" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#1a0a0a"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#3a1000"/><text x="30" y="33" text-anchor="middle" fill="#ff6900" font-size="10" font-weight="bold">Mi</text><circle cx="30" cy="92" r="4" fill="#333"/></svg>`,
+  honor:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#0a1a0a" stroke="#c00000" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#050f05"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#1a0000"/><text x="30" y="33" text-anchor="middle" fill="#c00000" font-size="8" font-weight="bold">HONOR</text><circle cx="30" cy="92" r="4" fill="#c00000" opacity="0.5"/></svg>`,
   poco:`<svg viewBox="0 0 60 100" width="55" height="92"><rect x="5" y="2" width="50" height="96" rx="8" fill="#1a0a1a" stroke="#9b59b6" stroke-width="1.5"/><rect x="10" y="12" width="40" height="70" rx="3" fill="#0d000d"/><rect x="14" y="18" width="32" height="22" rx="2" fill="#2d0050"/><text x="30" y="33" text-anchor="middle" fill="#9b59b6" font-size="9" font-weight="bold">POCO</text><circle cx="30" cy="92" r="4" fill="#9b59b6" opacity="0.5"/></svg>`,
   laptop:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="5" fill="#2a2a2a" stroke="#444" stroke-width="1.5"/><rect x="16" y="11" width="88" height="48" rx="2" fill="#0a0a1a"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#0d1a2e"/><rect x="24" y="20" width="72" height="4" rx="1" fill="#1e3a5f" opacity="0.7"/><rect x="24" y="27" width="50" height="3" rx="1" fill="#3ea6ff" opacity="0.5"/><rect x="24" y="33" width="65" height="3" rx="1" fill="#333"/><rect x="0" y="65" width="120" height="7" rx="2" fill="#222" stroke="#444" stroke-width="1"/><rect x="45" y="65" width="30" height="7" rx="2" fill="#333"/></svg>`,
   gaming_laptop:`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="5" fill="#1a0a0a" stroke="#ff0000" stroke-width="2"/><rect x="16" y="11" width="88" height="48" rx="2" fill="#0a0000"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#150000"/><rect x="24" y="20" width="72" height="4" rx="1" fill="#ff0000" opacity="0.4"/><text x="60" y="48" text-anchor="middle" fill="#ff0000" font-size="8" font-weight="bold" opacity="0.7">GAMING</text><rect x="0" y="65" width="120" height="7" rx="2" fill="#1a0000" stroke="#ff0000" stroke-width="1"/></svg>`,
@@ -154,16 +155,18 @@ const svgs={
 };
 
 const deviceSvg={
-  "samsung-a16":svgs.samsung,"samsung-a56":svgs.samsung,"samsung-a36":svgs.samsung,"samsung-a26":svgs.samsung,
+  "samsung-a16":svgs.samsung,"samsung-a26":svgs.samsung,"samsung-a36":svgs.samsung,"samsung-a56":svgs.samsung,
   "samsung-s24":svgs.samsung,"samsung-s24-ultra":svgs.samsung,"samsung-s25":svgs.samsung,
-  "samsung-s25-ultra":svgs.samsung,"samsung-s25-fe":svgs.samsung,"samsung-a17":svgs.samsung,
-  "iphone-15":svgs.iphone,"iphone-16":svgs.iphone,"iphone-16-pro":svgs.iphone,
-  "redmi-note-14":svgs.xiaomi,"xiaomi-15t":svgs.xiaomi,"xiaomi-15":svgs.xiaomi,"poco-x7-pro":svgs.poco,
-  "lenovo-ideapad":svgs.laptop,"lenovo-slim5":svgs.laptop,"lenovo-legion":svgs.gaming_laptop,
-  "asus-rog":svgs.gaming_laptop,"asus-vivobook":svgs.laptop,"hp-probook":svgs.laptop,"macbook-m2":svgs.macbook,
+  "samsung-s25-ultra":svgs.samsung,"samsung-s25-fe":svgs.samsung,
+  "iphone-15":svgs.iphone,"iphone-15-plus":svgs.iphone,"iphone-16-pro":svgs.iphone,
+  "redmi-note-14":svgs.xiaomi,"redmi-note-14-5g":svgs.xiaomi,"redmi-note-14-pro-5g":svgs.xiaomi,
+  "redmi-note-15-pro":svgs.xiaomi,"xiaomi-15t":svgs.xiaomi,"poco-x7-pro":svgs.poco,
+  "honor-x9c":svgs.honor,"honor-x8c":svgs.honor,
+  "lenovo-ideapad":svgs.laptop,"lenovo-legion":svgs.gaming_laptop,
+  "asus-rog":svgs.gaming_laptop,"hp-probook":svgs.laptop,"macbook-m2":svgs.macbook,
   "apple-watch-10":svgs.apple_watch,"apple-watch-se":svgs.apple_watch,
-  "samsung-watch-7":svgs.watch_round,"xiaomi-band-9":svgs.band,"amazfit-gtr":svgs.watch_round,
-  "huawei-band-9":svgs.band,"xiaomi-band-8":svgs.band
+  "samsung-watch-7":svgs.watch_round,"xiaomi-band-9":svgs.band,"xiaomi-band-8":svgs.band,
+  "amazfit-gtr":svgs.watch_round,"huawei-band-9":svgs.band
 };
 
 const specs={
@@ -171,18 +174,22 @@ const specs={
   "samsung-a26":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1380"],["📷","50MP + 8MP"],["🔋","5000mAh, 25W"],["💧","IP67"]],
   "samsung-a36":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Snapdragon 6 Gen 3"],["📷","50MP + 12MP"],["🔋","5000mAh, 45W"],["💧","IP67"]],
   "samsung-a56":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Exynos 1580"],["📷","50MP + 12MP"],["🔋","5000mAh, 45W"],["💧","IP67"]],
-  "samsung-a17":[["📺","6.7\" AMOLED, 90Hz"],["⚡","Helio G99"],["📷","50MP + 5MP"],["🔋","5000mAh, 25W"],["💧","IP54"]],
   "samsung-s24":[["📺","6.2\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Gen 3"],["📷","50MP + 12MP + 10MP"],["🔋","4000mAh, 25W"],["💧","IP68"]],
-  "samsung-s24-ultra":[["📺","6.8\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Gen 3"],["📷","200MP + 50MP + 10MP"],["🔋","5000mAh, 45W"],["💧","IP68"]],
+  "samsung-s24-ultra":[["📺","6.8\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Gen 3"],["📷","200MP + 50MP"],["🔋","5000mAh, 45W"],["💧","IP68"]],
   "samsung-s25":[["📺","6.2\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Elite"],["📷","50MP + 12MP + 10MP"],["🔋","4000mAh, 25W"],["💧","IP68"]],
-  "samsung-s25-ultra":[["📺","6.9\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Elite"],["📷","200MP + 50MP + 10MP"],["🔋","5000mAh, 45W"],["💧","IP68"]],
+  "samsung-s25-ultra":[["📺","6.9\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Elite"],["📷","200MP + 50MP"],["🔋","5000mAh, 45W"],["💧","IP68"]],
   "samsung-s25-fe":[["📺","6.7\" AMOLED, 120Hz"],["⚡","Snapdragon 8 Gen 3"],["📷","50MP + 12MP + 8MP"],["🔋","4900mAh, 45W"],["💧","IP68"]],
   "iphone-15":[["📺","6.1\" Retina XDR"],["⚡","A16 Bionic"],["📷","48MP + 12MP"],["🔋","3349mAh"],["💧","IP68"]],
-  "iphone-16":[["📺","6.1\" OLED"],["⚡","A18 chip"],["📷","48MP + 12MP"],["🔋","3561mAh"],["💧","IP68"]],
-  "iphone-16-pro":[["📺","6.3\" ProMotion 120Hz"],["⚡","A18 Pro"],["📷","48MP Fusion"],["🔋","3582mAh"],["💧","IP68"]],
-  "redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G100 Ultra"],["📷","200MP"],["🔋","5500mAh, 120W"],["💧","IP54"]],
+  "iphone-15-plus":[["📺","6.7\" Retina XDR"],["⚡","A16 Bionic"],["📷","48MP + 12MP"],["🔋","4383mAh"],["💧","IP68"]],
+  "iphone-16-pro":[["📺","6.3\" ProMotion 120Hz"],["⚡","A18 Pro"],["📷","48MP Fusion + 12MP"],["🔋","3582mAh"],["💧","IP68"]],
+  "redmi-note-14":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Helio G99-Ultra"],["📷","108MP + 8MP"],["🔋","5500mAh, 45W"],["💧","IP54"]],
+  "redmi-note-14-5g":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Dimensity 7025 Ultra"],["📷","108MP + 8MP"],["🔋","5500mAh, 45W"],["💧","IP54"]],
+  "redmi-note-14-pro-5g":[["📺","6.67\" AMOLED, 120Hz"],["⚡","Dimensity 7300 Ultra"],["📷","200MP + 8MP"],["🔋","5500mAh, 45W"],["💧","IP66"]],
+  "redmi-note-15-pro":[["📺","6.77\" AMOLED, 144Hz"],["⚡","Dimensity 8300 Ultra"],["📷","200MP + 8MP"],["🔋","5500mAh, 90W"],["💧","IP66"]],
   "xiaomi-15t":[["📺","6.83\" AMOLED, 144Hz"],["⚡","Dimensity 8400"],["📷","50MP Leica"],["🔋","5500mAh, 67W"],["💧","IP68"]],
   "poco-x7-pro":[["📺","6.67\" AMOLED, 144Hz"],["⚡","Snapdragon 7+ Gen 2"],["📷","50MP + 8MP"],["🔋","6550mAh, 90W"],["💧","IP64"]],
+  "honor-x9c":[["📺","6.78\" AMOLED, 120Hz"],["⚡","Snapdragon 6 Gen 1"],["📷","108MP + 5MP"],["🔋","5800mAh, 35W"],["💧","IP65"]],
+  "honor-x8c":[["📺","6.7\" AMOLED, 90Hz"],["⚡","Snapdragon 6 Gen 1"],["📷","108MP + 5MP"],["🔋","5330mAh, 35W"],["💧","IP64"]],
   "lenovo-ideapad":[["📺","15.6\" FHD IPS"],["⚡","i5-13420H"],["💾","8GB + 512GB SSD"],["🔋","8-10 soat"],["⚖️","1.62kg"]],
   "lenovo-legion":[["📺","16\" OLED, 240Hz"],["⚡","i9-14900HX"],["🎮","RTX 5070 8GB"],["💾","16GB + 1TB"],["🔋","80Wh"]],
   "asus-rog":[["📺","16\" WUXGA, 165Hz"],["⚡","i7-13650HX"],["🎮","RTX 4050 6GB"],["💾","16GB DDR5"],["🔋","90Wh"]],
@@ -200,17 +207,23 @@ const specs={
 const data={
   phones:[
     {id:"samsung-a16",name:"Samsung Galaxy A16",badge:"ANDROID",prices:{uzum:"2,039,000",olcha:"2,131,900",texnomart:"2,550,000",mediapark:"2,199,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-samsung-galaxy-1352827",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a16",texnomart:"https://texnomart.uz/uz/product/detail/357963/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+a16"}},
-    {id:"samsung-a26",name:"Samsung Galaxy A26",badge:"YANGI",prices:{uzum:null,olcha:null,texnomart:null,mediapark:"3,499,000"},links:{uzum:null,olcha:null,texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/smartfonlar-brendi-660/samsung-smartfonlari-210"}},
     {id:"samsung-a56",name:"Samsung Galaxy A56 5G",badge:"5G",prices:{uzum:"6,500,000",olcha:"10,100,000",texnomart:"5,360,000",mediapark:"5,900,000"},links:{uzum:"https://uzum.uz/ru/product/smartfon-samsung-galaxy-1602716",olcha:"https://olcha.uz/ru/product/view/samsung-galaxy-a56-5g",texnomart:"https://texnomart.uz/ru/product/detail/358327/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=samsung+a56"}},
     {id:"samsung-s24",name:"Samsung Galaxy S24",badge:"FLAGMAN",prices:{uzum:null,olcha:"9,089,537",texnomart:"8,621,000",mediapark:null},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/samsung-galaxy-s24",texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+s24",mediapark:null}},
     {id:"samsung-s24-ultra",name:"Samsung Galaxy S24 Ultra",badge:"ULTRA",prices:{uzum:null,olcha:"11,186,010",texnomart:null,mediapark:"13,915,000"},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/samsung-galaxy-s24-ultra",texnomart:null,mediapark:"https://mediapark.uz/uz/products/view/smartfon-samsung-galaxy-s24-ultra-titanium-black-23413"}},
     {id:"samsung-s25",name:"Samsung Galaxy S25",badge:"YANGI",prices:{uzum:null,olcha:null,texnomart:"8,699,000",mediapark:null},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/uz/search/?q=samsung+galaxy+s25",mediapark:null}},
     {id:"samsung-s25-ultra",name:"Samsung Galaxy S25 Ultra",badge:"ULTRA",prices:{uzum:null,olcha:"14,499,000",texnomart:"15,411,000",mediapark:"15,499,000"},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/samsung-galaxy-s25-ultra",texnomart:"https://texnomart.uz/ru/product/detail/358178/",mediapark:"https://mediapark.uz/uz/products/view/smartfon-samsung-galaxy-s25-ultra-12-512-titanium-black-28521"}},
     {id:"samsung-s25-fe",name:"Samsung Galaxy S25 FE",badge:"YANGI",prices:{uzum:null,olcha:"8,904,167",texnomart:"8,999,000",mediapark:null},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/samsung-galaxy-s25-fe-black-8128-gb",texnomart:"https://texnomart.uz/uz/product/detail/358866/",mediapark:null}},
-    {id:"iphone-15",name:"iPhone 15",badge:"PREMIUM",prices:{uzum:"15,135,000",olcha:"15,135,000",texnomart:"14,230,000",mediapark:"14,900,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",olcha:"https://olcha.uz/oz/product/view/apple-iphone-15",texnomart:"https://texnomart.uz/ru/product/detail/356314/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=iphone+15"}},
-    {id:"redmi-note-14",name:"Redmi Note 14 Pro",badge:"200MP",prices:{uzum:"3,997,120",olcha:"4,360,000",texnomart:"4,285,000",mediapark:"4,100,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1466128",olcha:"https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",texnomart:"https://texnomart.uz/ru/product/detail/358105/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=redmi+note+14+pro"}},
+    {id:"iphone-15",name:"iPhone 15",badge:"PREMIUM",prices:{uzum:"15,135,000",olcha:"15,135,000",texnomart:"14,230,000",mediapark:"14,230,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-apple-iphone-15-857576",olcha:"https://olcha.uz/oz/product/view/apple-iphone-15",texnomart:"https://texnomart.uz/ru/product/detail/356314/",mediapark:"https://mediapark.uz/uz/products/category/apple-658/iphone-15-15-pro-15-pro-max-611"}},
+    {id:"iphone-15-plus",name:"iPhone 15 Plus",badge:"PLUS",prices:{uzum:null,olcha:null,texnomart:null,mediapark:"14,745,000"},links:{uzum:null,olcha:null,texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/apple-658/iphone-15-pro-max-256-gb-615"}},
+    {id:"iphone-16-pro",name:"iPhone 16 Pro",badge:"PRO",prices:{uzum:null,olcha:null,texnomart:"17,459,000",mediapark:null},links:{uzum:null,olcha:null,texnomart:"https://texnomart.uz/katalog/iphone-16-pro-%7C-16-pro-max/",mediapark:null}},
+    {id:"redmi-note-14",name:"Redmi Note 14",badge:"108MP",prices:{uzum:"2,232,000",olcha:"2,232,000",texnomart:null,mediapark:"2,800,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1436215",olcha:"https://olcha.uz/oz/product/view/redmi-note-14",texnomart:null,mediapark:"https://mediapark.uz/uz/products/view/smartfon-xiaomi-redmi-note-14-8-256gb-28457"}},
+    {id:"redmi-note-14-5g",name:"Redmi Note 14 5G",badge:"5G",prices:{uzum:null,olcha:"2,750,000",texnomart:null,mediapark:null},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/redmi-note-14-5g",texnomart:null,mediapark:null}},
+    {id:"redmi-note-14-pro-5g",name:"Redmi Note 14 Pro 5G",badge:"200MP",prices:{uzum:"3,997,120",olcha:"4,360,000",texnomart:"4,285,000",mediapark:"4,100,000"},links:{uzum:"https://uzum.uz/uz/product/smartfon-redmi-note-1466128",olcha:"https://olcha.uz/ru/product/view/xiaomi-redmi-note-14-pro-midnight-black-8256-gb",texnomart:"https://texnomart.uz/ru/product/detail/358105/",mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=redmi+note+14+pro"}},
+    {id:"redmi-note-15-pro",name:"Redmi Note 15 Pro+ 5G",badge:"YANGI",prices:{uzum:null,olcha:"4,849,501",texnomart:null,mediapark:null},links:{uzum:null,olcha:"https://olcha.uz/oz/product/view/xiaomi-redmi-note-15-pro-5g",texnomart:null,mediapark:null}},
     {id:"xiaomi-15t",name:"Xiaomi 15T",badge:"LEICA",prices:{uzum:"9,150,000",olcha:"9,267,993",texnomart:null,mediapark:"9,000,000"},links:{uzum:"https://uzum.uz/ru/product/xiaomi-15t-imei-sim-beeline-s-2429506",olcha:"https://olcha.uz/oz/product/view/xiaomi-15t-cernyi-12256-gb",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=xiaomi+15t"}},
-    {id:"poco-x7-pro",name:"Poco X7 Pro",badge:"6550mAh",prices:{uzum:"4,500,000",olcha:"4,600,000",texnomart:null,mediapark:"4,550,000"},links:{uzum:"https://uzum.uz/uz/search?query=poco+x7+pro",olcha:"https://olcha.uz/oz/search?q=poco+x7+pro",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=poco+x7+pro"}}
+    {id:"poco-x7-pro",name:"Poco X7 Pro",badge:"6550mAh",prices:{uzum:"4,500,000",olcha:"4,600,000",texnomart:null,mediapark:"4,550,000"},links:{uzum:"https://uzum.uz/uz/search?query=poco+x7+pro",olcha:"https://olcha.uz/oz/search?q=poco+x7+pro",texnomart:null,mediapark:"https://mediapark.uz/uz/products/category/telefonlar-17/smartfonlar-40?search=poco+x7+pro"}},
+    {id:"honor-x9c",name:"Honor X9C",badge:"5800mAh",prices:{uzum:null,olcha:null,texnomart:null,mediapark:"3,999,000"},links:{uzum:null,olcha:null,texnomart:null,mediapark:"https://mediapark.uz/uz/products/view/smartfon-honor-x9c-8-256-titanium-black-28188"}},
+    {id:"honor-x8c",name:"Honor X8C",badge:"HONOR",prices:{uzum:null,olcha:null,texnomart:null,mediapark:"3,239,000"},links:{uzum:null,olcha:null,texnomart:null,mediapark:"https://mediapark.uz/uz/products/view/smartfon-honor-x8c-8-128gb-green-28803"}}
   ],
   laptops:[
     {id:"lenovo-ideapad",name:"Lenovo IdeaPad Slim 3",badge:"O'QISH",prices:{uzum:"7,247,000",olcha:"5,500,000",texnomart:"3,990,000",mediapark:"5,200,000"},links:{uzum:"https://uzum.uz/ru/product/noutbuk-lenovo-ideapad-slim-3-16iru8-1102591",olcha:"https://olcha.uz/oz/product/view/noutbuk-lenovo-ideapad-slim-3-i5-13420h-8512-gb-156",texnomart:"https://texnomart.uz/uz/katalog/noutbuki-lenovo/",mediapark:"https://mediapark.uz/uz/products/category/noutbuk-va-ultrabuklar-22/noutbuklar-313?search=lenovo+ideapad+slim+3"}},
@@ -260,6 +273,10 @@ function render(){
   const grid=document.getElementById("grid");
   grid.innerHTML="";
   const filtered=data[curCat].filter(p=>p.prices[curMarket]&&p.links[curMarket]);
+  if(filtered.length===0){
+    grid.innerHTML=`<div class="empty">Bu marketda hozircha mahsulot yo'q 😊</div>`;
+    return;
+  }
   filtered.forEach((p,i)=>{
     const price=p.prices[curMarket];
     const link=p.links[curMarket];
@@ -281,9 +298,6 @@ function render(){
       </div>
     </div>`;
   });
-  if(filtered.length===0){
-    grid.innerHTML=`<div style="text-align:center;color:#555;padding:40px;grid-column:1/-1">Bu marketda hozircha mahsulot yo'q</div>`;
-  }
 }
 </script>
 </body>
