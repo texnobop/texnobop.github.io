@@ -15,15 +15,19 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-h
 .header{background:#0f0f0f;padding:16px 20px;border-bottom:1px solid #272727;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:22px;font-weight:bold;color:#fff;text-decoration:none}
 .logo span{color:#3ea6ff}
-.back{color:#3ea6ff;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px}
-.hero{background:linear-gradient(135deg,#0d1220,#1a1a2e);padding:40px 20px;text-align:center;border-bottom:1px solid #272727}
-.brand-logo{font-size:48px;margin-bottom:12px}
-.hero h1{font-size:24px;font-weight:bold;color:#fff;margin-bottom:8px}
-.hero p{font-size:14px;color:#aaa;max-width:600px;margin:0 auto;line-height:1.6}
-.stats{display:flex;justify-content:center;gap:30px;margin-top:20px;flex-wrap:wrap}
+.back{color:#3ea6ff;text-decoration:none;font-size:13px}
+.hero{position:relative;background:#000;padding:60px 20px;text-align:center;overflow:hidden;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:0}
+.hero-video iframe{position:absolute;top:50%;left:50%;width:130%;height:130%;transform:translate(-50%,-50%);pointer-events:none;opacity:0.35}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.7));z-index:1}
+.hero-content{position:relative;z-index:2}
+.brand-logo{font-size:52px;margin-bottom:14px}
+.hero h1{font-size:26px;font-weight:bold;color:#fff;margin-bottom:10px;text-shadow:0 2px 20px rgba(0,0,0,0.8)}
+.hero p{font-size:14px;color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto;line-height:1.6}
+.stats{display:flex;justify-content:center;gap:30px;margin-top:24px;flex-wrap:wrap}
 .stat{text-align:center}
-.stat-num{font-size:22px;font-weight:bold;color:#3ea6ff}
-.stat-label{font-size:11px;color:#555;margin-top:2px}
+.stat-num{font-size:24px;font-weight:bold;color:#3ea6ff}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
 .section{max-width:1100px;margin:0 auto;padding:30px 20px}
 .section-title{font-size:16px;font-weight:bold;color:#fff;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #272727}
 .market-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
@@ -67,13 +71,19 @@ footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24
 </div>
 
 <div class="hero">
-  <div class="brand-logo">📱</div>
-  <h1>Samsung Telefonlari Narxi O'zbekistonda</h1>
-  <p>Samsung Galaxy seriyasining barcha modellarini O'zbekistondagi eng yaxshi narxlarda toping. Uzum, Olcha, Texnomart va Mediapark narxlarini taqqoslang!</p>
-  <div class="stats">
-    <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Model</div></div>
-    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Market</div></div>
-    <div class="stat"><div class="stat-num">2025</div><div class="stat-label">Yangilangan</div></div>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/2gYqEi8-am4?autoplay=1&mute=1&loop=1&playlist=2gYqEi8-am4&controls=0&showinfo=0&rel=0&disablekb=1" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="brand-logo">📱</div>
+    <h1>Samsung Telefonlari Narxi O'zbekistonda</h1>
+    <p>Samsung Galaxy seriyasining barcha modellarini O'zbekistondagi eng yaxshi narxlarda toping. Uzum, Olcha, Texnomart va Mediapark narxlarini taqqoslang!</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Model</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Market</div></div>
+      <div class="stat"><div class="stat-num">2025</div><div class="stat-label">Yangilangan</div></div>
+    </div>
   </div>
 </div>
 
@@ -97,19 +107,15 @@ footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24
       Mediapark
     </div>
   </div>
-
   <div class="grid" id="grid"></div>
 
   <div class="article">
     <h2>Samsung telefonlari haqida</h2>
     <p>Samsung — dunyoning eng yirik smartfon ishlab chiqaruvchisi. O'zbekistonda Samsung telefonlari eng ko'p sotilgan brend hisoblanadi. Galaxy seriyasi arzon byudjet modellaridan tortib flagman darajasidagi telefonlargacha keng assortimentni o'z ichiga oladi.</p>
-    
     <h3>Samsung Galaxy A seriyasi</h3>
     <p>Galaxy A seriyasi o'rta narxli telefonlar uchun mo'ljallangan. A16, A26, A36 va A56 modellari O'zbekistonda eng ko'p sotiladi. Ular sifatli AMOLED ekran, kuchli batareya va uzoq muddatli yangilanish kafolati bilan jihozlangan.</p>
-    
     <h3>Samsung Galaxy S seriyasi</h3>
     <p>Galaxy S seriyasi — Samsung ning flagman telefonlari. S24, S25 va Ultra modellari eng yuqori texnik xususiyatlar, professional kamera va Snapdragon 8 Elite protsessori bilan jihozlangan.</p>
-    
     <h3>O'zbekistonda Samsung narxlari</h3>
     <p>Samsung telefonlarini O'zbekistonda Uzum Market, Olcha, Texnomart va Mediapark orqali sotib olish mumkin. Narxlar marketdan marketga farq qilishi mumkin, shuning uchun taqqoslab ko'rish tavsiya etiladi.</p>
   </div>
