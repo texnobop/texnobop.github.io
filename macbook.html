@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Apple MacBook narxlari O'zbekistonda. MacBook Pro M2 narxini Uzum, Olcha, Texnomart va Mediaparkda taqqoslang!">
+<meta name="keywords" content="macbook narxi uzbekistan, macbook pro m2 narxi, apple noutbuk narxi, macbook uzum, macbook olcha, macbook texnomart, macbook mediapark">
+<meta property="og:title" content="MacBook narxi O'zbekistonda - Texnobop">
+<meta property="og:description" content="MacBook modellarining eng arzon narxlarini toping!">
+<meta property="og:url" content="https://texnobop.github.io/macbook.html">
+<title>MacBook Narxi O'zbekistonda | Texnobop</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#fff;min-height:100vh}
+.header{background:#0f0f0f;padding:16px 20px;border-bottom:1px solid #272727;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:bold;color:#fff;text-decoration:none}
+.logo span{color:#3ea6ff}
+.back{color:#3ea6ff;text-decoration:none;font-size:13px}
+.hero{position:relative;background:#000;padding:80px 20px;text-align:center;overflow:hidden;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:0}
+.hero-video iframe{position:absolute;top:50%;left:50%;width:300%;height:300%;transform:translate(-50%,-50%);pointer-events:none;opacity:0.35}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.7));z-index:1}
+.hero-content{position:relative;z-index:2}
+.brand-logo{font-size:52px;margin-bottom:14px}
+.hero h1{font-size:26px;font-weight:bold;color:#fff;margin-bottom:10px;text-shadow:0 2px 20px rgba(0,0,0,0.8)}
+.hero p{font-size:14px;color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto;line-height:1.6}
+.stats{display:flex;justify-content:center;gap:30px;margin-top:24px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:24px;font-weight:bold;color:#a0a0a0}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
+.section{max-width:1100px;margin:0 auto;padding:30px 20px}
+.section-title{font-size:16px;font-weight:bold;color:#fff;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #272727}
+.market-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tab{padding:8px 18px;border-radius:20px;font-size:12px;font-weight:bold;border:1px solid #303030;background:#1a1a1a;color:#888;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px}
+.tab img{width:20px;height:20px;object-fit:contain;border-radius:4px}
+.tab:hover{border-color:#a0a0a0;color:#fff}
+.tab.active{background:#a0a0a0;color:#000;border-color:#a0a0a0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.card{background:#1a1a1a;border-radius:14px;overflow:hidden;border:1px solid #272727;transition:all 0.3s;display:flex;flex-direction:column;animation:cardIn 0.4s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.card:hover{transform:translateY(-5px);border-color:#a0a0a0;box-shadow:0 10px 30px rgba(160,160,160,0.1)}
+.card-thumb{height:150px;display:flex;align-items:center;justify-content:center;background:#222;position:relative}
+.card-badge{position:absolute;top:8px;left:8px;background:#a0a0a0;color:#000;font-size:9px;font-weight:bold;padding:3px 10px;border-radius:20px}
+.card-price-tag{position:absolute;bottom:8px;right:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:bold;padding:3px 10px;border-radius:20px}
+.card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card-name{font-size:13px;font-weight:bold;color:#fff;line-height:1.4}
+.spec-row{display:flex;align-items:center;gap:6px;font-size:10px;color:#888}
+.spec-icon{font-size:11px;width:16px;text-align:center}
+.card-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#555,#a0a0a0);color:#000;padding:10px;border-radius:10px;font-size:11px;font-weight:bold;text-decoration:none;margin-top:auto;transition:all 0.3s}
+.card-btn:hover{background:linear-gradient(135deg,#a0a0a0,#c0c0c0);transform:scale(1.02)}
+.card-btn img{width:18px;height:18px;object-fit:contain;border-radius:4px}
+.article{background:#1a1a1a;border-radius:14px;padding:24px;margin-top:30px;border:1px solid #272727}
+.article h2{font-size:18px;font-weight:bold;color:#fff;margin-bottom:16px}
+.article p{font-size:14px;color:#aaa;line-height:1.8;margin-bottom:12px}
+.article h3{font-size:15px;font-weight:bold;color:#a0a0a0;margin:16px 0 8px}
+.empty{text-align:center;color:#555;padding:40px;grid-column:1/-1}
+@media(max-width:768px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:20px}
+  .hero p{font-size:12px}
+  .stats{gap:20px}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .card-thumb{height:110px}
+  .card-body{padding:10px}
+  .card-name{font-size:11px}
+  .card-btn{font-size:10px;padding:8px}
+}
+footer{background:#111;border-top:1px solid #1a1a1a;text-align:center;padding:24px;font-size:11px;color:#444;margin-top:40px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="https://texnobop.github.io" class="logo">techno<span>bop</span></a>
+  <a href="https://texnobop.github.io" class="back">← Bosh sahifa</a>
+</div>
+
+<div class="hero">
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/u3SIKAmPXY4?autoplay=1&mute=1&loop=1&playlist=u3SIKAmPXY4&controls=0&showinfo=0&rel=0&disablekb=1" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="brand-logo">🍎</div>
+    <h1>MacBook Narxi O'zbekistonda</h1>
+    <p>Apple MacBook Pro M2 ni O'zbekistondagi eng yaxshi narxda toping. Uzum, Olcha, Texnomart va Mediapark narxlarini taqqoslang!</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">1+</div><div class="stat-label">Model</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Market</div></div>
+      <div class="stat"><div class="stat-num">2025</div><div class="stat-label">Yangilangan</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Marketni tanlang</div>
+  <div class="market-tabs">
+    <div class="tab active" onclick="selectM('uzum',this)">
+      <img src="https://texnobop.github.io/images/logos/uzum-logo.png" onerror="this.style.display='none'">
+      Uzum Market
+    </div>
+    <div class="tab" onclick="selectM('olcha',this)">
+      <img src="https://texnobop.github.io/images/logos/olcha-logo.png" onerror="this.style.display='none'">
+      Olcha
+    </div>
+    <div class="tab" onclick="selectM('texnomart',this)">
+      <img src="https://texnobop.github.io/images/logos/texnomart-logo.png" onerror="this.style.display='none'">
+      Texnomart
+    </div>
+    <div class="tab" onclick="selectM('mediapark',this)">
+      <img src="https://texnobop.github.io/images/logos/mediapark-logo.png" onerror="this.style.display='none'">
+      Mediapark
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <div class="article">
+    <h2>MacBook haqida</h2>
+    <p>Apple MacBook — dunyoning eng mashhur noutbuklaridan biri. MacBook Pro M2 o'zining inanilmas tezligi, uzun batareya muddati va chiroyli dizayni bilan ajralib turadi. Dasturchilar, dizaynerlar va ijodkorlar uchun ideal tanlov.</p>
+    <h3>MacBook Pro M2</h3>
+    <p>MacBook Pro M2 — Apple ning M2 chipi bilan jihozlangan professional noutbuk. 8GB unified memory va 256GB SSD bilan 18-22 soatlik batareya muddatini ta'minlaydi. 13.3" Retina ekran va 1.4kg yengil vazni bilan istalgan joyda ishlash mumkin.</p>
+    <h3>Nima uchun MacBook?</h3>
+    <p>MacBook Windows noutbuklariga nisbatan bir necha jihatdan ustun: uzun batareya, tez ishlash va macOS ekotizimi. Final Cut Pro, Logic Pro kabi professional dasturlar faqat macOS da ishlaydi.</p>
+    <h3>O'zbekistonda MacBook narxlari</h3>
+    <p>MacBook Pro M2 ni O'zbekistonda Uzum Market orqali sotib olish mumkin. Narxlar doimiy yangilanib turadi.</p>
+  </div>
+</div>
+
+<footer>© 2025 Texnobop — Barcha huquqlar himoyalangan | <a href="https://texnobop.github.io" style="color:#a0a0a0">Bosh sahifa</a></footer>
+
+<script>
+const svg=`<svg viewBox="0 0 120 80" width="105" height="70"><rect x="10" y="5" width="100" height="60" rx="8" fill="#c0c0c0" stroke="#999" stroke-width="1"/><rect x="16" y="11" width="88" height="48" rx="3" fill="#1c1c1e"/><rect x="20" y="15" width="80" height="38" rx="2" fill="#000"/><text x="60" y="38" text-anchor="middle" fill="#555" font-size="18">🍎</text><rect x="0" y="65" width="120" height="7" rx="3" fill="#b0b0b0" stroke="#999" stroke-width="1"/></svg>`;
+
+const specs={
+  "macbook-m2":[["📺","13.3\" Retina, 500nits"],["⚡","Apple M2 (8 yadro)"],["💾","8GB + 256GB SSD"],["🔋","18-22 soat"],["⚖️","1.4kg"]]
+};
+
+const laptops=[
+  {id:"macbook-m2",name:"Apple MacBook Pro M2",badge:"PREMIUM",prices:{uzum:"20,832,000",olcha:null,texnomart:null,mediapark:null},links:{uzum:"https://uzum.uz/uz/search?query=macbook+pro+m2",olcha:null,texnomart:null,mediapark:null}}
+];
+
+const mktNames={uzum:"Uzumdan sotib olish",olcha:"Olchadan sotib olish",texnomart:"Texnomartdan sotib olish",mediapark:"Mediaparkdan sotib olish"};
+const mktLogos={uzum:"https://texnobop.github.io/images/logos/uzum-logo.png",olcha:"https://texnobop.github.io/images/logos/olcha-logo.png",texnomart:"https://texnobop.github.io/images/logos/texnomart-logo.png",mediapark:"https://texnobop.github.io/images/logos/mediapark-logo.png"};
+let curMarket="uzum";
+
+function selectM(m,el){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  curMarket=m;
+  render();
+}
+
+function render(){
+  const grid=document.getElementById("grid");
+  grid.innerHTML="";
+  const filtered=laptops.filter(p=>p.prices[curMarket]&&p.links[curMarket]);
+  if(filtered.length===0){
+    grid.innerHTML=`<div class="empty">Bu marketda hozircha MacBook yo'q 😊</div>`;
+    return;
+  }
+  filtered.forEach((p,i)=>{
+    const specRows=(specs[p.id]||[]).map(s=>`<div class="spec-row"><span class="spec-icon">${s[0]}</span><span>${s[1]}</span></div>`).join('');
+    grid.innerHTML+=`
+    <div class="card" style="animation-delay:${i*0.07}s">
+      <div class="card-thumb">
+        ${svg}
+        <span class="card-badge">${p.badge}</span>
+        <span class="card-price-tag">${p.prices[curMarket]} so'm</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div style="display:flex;flex-direction:column;gap:3px">${specRows}</div>
+        <a class="card-btn" href="${p.links[curMarket]}" target="_blank">
+          <img src="${mktLogos[curMarket]}" onerror="this.style.display='none'">
+          ${mktNames[curMarket]} →
+        </a>
+      </div>
+    </div>`;
+  });
+}
+
+render();
+</script>
+</body>
+</html>
